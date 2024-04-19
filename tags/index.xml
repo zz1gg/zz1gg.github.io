@@ -11,15 +11,195 @@
     <description>Recent content in Tags on zz1gg&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 20 Jul 2021 12:00:06 +0900</lastBuildDate>
+    <copyright>©2024, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 24 Jan 2024 23:02:31 +0900</lastBuildDate>
     
         <atom:link href="https://zz1gg.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
-        <title>aab</title>
+        <title>Golang</title>
+        <link>https://zz1gg.github.io/tags/golang/</link>
+        <pubDate>Wed, 24 Jan 2024 23:02:31 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/golang/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Index</title>
+        <link>https://zz1gg.github.io/tags/index/</link>
+        <pubDate>Wed, 24 Jan 2024 23:02:31 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/index/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>ProcessHollowing</title>
+        <link>https://zz1gg.github.io/tags/processhollowing/</link>
+        <pubDate>Wed, 24 Jan 2024 23:02:31 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/processhollowing/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Shellcode</title>
+        <link>https://zz1gg.github.io/tags/shellcode/</link>
+        <pubDate>Wed, 24 Jan 2024 23:02:31 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/shellcode/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Windbg</title>
+        <link>https://zz1gg.github.io/tags/windbg/</link>
+        <pubDate>Wed, 24 Jan 2024 23:02:31 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/windbg/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Windows</title>
+        <link>https://zz1gg.github.io/tags/windows/</link>
+        <pubDate>Wed, 24 Jan 2024 23:02:31 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/windows/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Go</title>
+        <link>https://zz1gg.github.io/tags/go/</link>
+        <pubDate>Sun, 12 Dec 2021 12:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/go/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>IDA</title>
+        <link>https://zz1gg.github.io/tags/ida/</link>
+        <pubDate>Sun, 12 Dec 2021 12:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/ida/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Reverse</title>
+        <link>https://zz1gg.github.io/tags/reverse/</link>
+        <pubDate>Sun, 12 Dec 2021 12:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/reverse/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Sec</title>
+        <link>https://zz1gg.github.io/tags/sec/</link>
+        <pubDate>Sun, 12 Dec 2021 12:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/sec/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Aab</title>
         <link>https://zz1gg.github.io/tags/aab/</link>
         <pubDate>Tue, 20 Jul 2021 12:00:06 +0900</pubDate>
         
@@ -55,30 +235,12 @@
       </item>
       
       <item>
-        <title>apk</title>
+        <title>Apk</title>
         <link>https://zz1gg.github.io/tags/apk/</link>
         <pubDate>Tue, 20 Jul 2021 12:00:06 +0900</pubDate>
         
         
         <guid>https://zz1gg.github.io/tags/apk/</guid>
-        <description></description>
-        
-        <dc:creator>zz1gg</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>index</title>
-        <link>https://zz1gg.github.io/tags/index/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        
-        <guid>https://zz1gg.github.io/tags/index/</guid>
         <description></description>
         
         <dc:creator>zz1gg</dc:creator>

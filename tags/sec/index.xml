@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Sec on zz1gg&#39;s Blog</title>
+    <link>https://zz1gg.github.io/tags/sec/</link>
+    <description>Recent content in Sec on zz1gg&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2024, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 12 Dec 2021 12:00:06 +0900</lastBuildDate>
+    
+        <atom:link href="https://zz1gg.github.io/tags/sec/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Golang杂记</title>
+        <link>https://zz1gg.github.io/posts/talk-about-golang-informally/</link>
+        <pubDate>Sun, 12 Dec 2021 12:00:06 +0900</pubDate>
+        
+        <atom:modified>Sun, 12 Dec 2021 12:00:06 +0900</atom:modified>
+        <guid>https://zz1gg.github.io/posts/talk-about-golang-informally/</guid>
+        <description>&lt;p&gt;本文主要整理、记录了笔者在Golang的学习、使用过程中碰到的一些有意思的方面，内容包括但不限于编译生成、程序的元数据、代码函数、汇编、堆栈、安全。&lt;/p&gt;</description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        <media:content url="https://zz1gg.github.io/images/posts/talk_about_golang/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Golang</category>
+            
+          
+            
+              <category>go</category>
+            
+          
+            
+              <category>sec</category>
+            
+          
+            
+              <category>IDA</category>
+            
+          
+            
+              <category>reverse</category>
+            
+          
+        
+        
+          
+            
+              <category>Golang</category>
+            
+          
+        
+        
+          
+            
+              <category>Golang</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

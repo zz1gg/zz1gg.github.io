@@ -6,12 +6,13 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>index on zz1gg&#39;s Blog</title>
+    <title>Index on zz1gg&#39;s Blog</title>
     <link>https://zz1gg.github.io/tags/index/</link>
-    <description>Recent content in index on zz1gg&#39;s Blog</description>
+    <description>Recent content in Index on zz1gg&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>©2021, All Rights Reserved</copyright>
+    <copyright>©2024, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 24 Jan 2024 23:02:31 +0900</lastBuildDate>
     
         <atom:link href="https://zz1gg.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,7 +21,7 @@
       <item>
         <title>Posts</title>
         <link>https://zz1gg.github.io/posts/</link>
-        <pubDate>Tue, 20 Jul 2021 12:00:06 +0900</pubDate>
+        <pubDate>Wed, 24 Jan 2024 23:02:31 +0900</pubDate>
         
         
         <guid>https://zz1gg.github.io/posts/</guid>

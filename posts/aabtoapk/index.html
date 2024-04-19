@@ -18,9 +18,9 @@
 
 <script defer src="/js/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js"></script>
 
-<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
+<script defer src="/js/helper/getParents.min.086022fb02d7a1517e33c2670bffb976b3e80bcacd9caeee0c6a586064f20e42.js"></script>
 
-<script defer src="/js/helper/fadeinout.min.1d13d3e810c3940e80cbba6216a1c76fbf42b5431fc83537ea6997863802362b.js"></script>
+<script defer src="/js/helper/fadeinout.min.3ce954c8aea3b69cc5e6f734d8273ba4cd48d3a7987dbdca145849bc4b8fc296.js"></script>
 
 <script defer src="/js/helper/closest.min.js"></script>
   
@@ -651,7 +651,7 @@
 
   
     
-    var baseurl = JSON.parse("\"https://zz1gg.github.io\"");
+    var baseurl = JSON.parse("\"https://zz1gg.github.io/\"");
     
     var permalink = JSON.parse("\"https://zz1gg.github.io/posts/aabtoapk/\"");
     
@@ -1359,7 +1359,7 @@
     <meta property="twitter:description" content="">
   
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.124.1">
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1407,12 +1407,12 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://zz1gg.github.io"
+      "@id": "https://zz1gg.github.io/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "zz1gg's Blog",
-      "url": "https://zz1gg.github.io"
+      "url": "https://zz1gg.github.io/"
     }
   }
 </script>
@@ -1740,9 +1740,9 @@
 
   <li><a href="https://zz1gg.github.io/tags/android/" class="single__tag" title="Android">#Android</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/aab/" class="single__tag" title="aab">#aab</a></li>
+  <li><a href="https://zz1gg.github.io/tags/aab/" class="single__tag" title="Aab">#Aab</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/apk/" class="single__tag" title="apk">#apk</a></li>
+  <li><a href="https://zz1gg.github.io/tags/apk/" class="single__tag" title="Apk">#Apk</a></li>
 
 </ul>
 
@@ -1782,9 +1782,9 @@
 <h2 id="apk">APK</h2>
 <p>APK: Android应用程序包（Android application package）是Android操作系统使用的一种应用程序包文件格式，用于分发和安装移动应用及中间件。一个Android应用程序的代码想要在Android设备上运行，必须先进行编译，然后被打包成为一个被Android系统所能识别的文件才可以被运行，而这种能被Android系统识别并运行的文件格式便是<code>APK</code>。</p>
 <p>可以使用Kotlin、Java 等多种语言编写Android应用程序，编译前项目的结构大概如图：</p>
-<p><img src="/images/posts/Android/app_project_structure.png" alt="" /></p>
+<p><img src="/images/posts/Android/app_project_structure.png"></p>
 <p>典型 Android 应用模块的构建流程, 按照以下常规步骤执行：</p>
-<p><img src="/images/posts/Android/generateapk.png" alt="APK的构建流程" /></p>
+<p><img alt="APK的构建流程" src="/images/posts/Android/generateapk.png"></p>
 <blockquote>
 <p>编译器将您的源代码转换成 DEX 文件（Dalvik 可执行文件，其中包括在 Android 设备上运行的字节码），并将其他所有内容转换成编译后的资源。<br />
 APK 打包器将 DEX 文件和编译后的资源组合成单个 APK。不过，必须先为 APK 签名，然后才能将应用安装并部署到 Android 设备上。<br />
@@ -1794,7 +1794,7 @@ APK 打包器使用调试或发布密钥库为 APK 签名：<br />
 在生成最终 APK 之前，打包器会使用 zipalign 工具对应用进行优化，以减少其在设备上运行时所占用的内存。</p>
 </blockquote>
 <p>一个 APK 文件包含 Android 应用的所有内容，它也是 Android 设备用来安装应用的文件。APK 是遵循 ZIP 文件格式的文件，Android SDK 工具会将代码连同任何数据和资源文件编译成后缀为 <code>.apk</code> 的APK归档文件。使用Android Studio的APK Analyzer tool 分析样例helloworld.apk，可以看出该APK的归档文件概况：</p>
-<p><img src="/images/posts/Android/apkfiletype.png" alt="" /></p>
+<p><img src="/images/posts/Android/apkfiletype.png"></p>
 <p>APK 文件由一个 Zip 压缩文件组成，其中包含构成应用的所有文件。这些文件包括 Java 类文件、资源文件和包含已编译资源的文件。</p>
 <p>上述的 APK 包含以下目录：</p>
 <ul>
@@ -1814,13 +1814,13 @@ APK 打包器使用调试或发布密钥库为 APK 签名：<br />
 <p>而AAB打包方式，减小APK大小，改变交付方式，很好的解决了这种臃肿的打包方式。</p>
 <h2 id="aab">AAB</h2>
 <p>Android App Bundle为新 App 动态化框架（Android App Bundle，缩写为 AAB），即是一个动态的载体文件。AS生成的aab文件，可将语言、屏幕大小、硬件架构等内容全部覆盖。</p>
-<p><img src="/images/posts/Android/DynamicDelivery.gif" alt="Dynamic Delivery示意效图" /></p>
+<p><img alt="Dynamic Delivery示意效图" src="/images/posts/Android/DynamicDelivery.gif"></p>
 <p>下图是<a href="https://developer.android.google.cn/guide/app-bundle/app-bundle-format?hl=zh-cn">Android App Bundle 格式</a>图：</p>
-<p><img src="/images/posts/Android/aabfileformat.png" alt="" /></p>
+<p><img src="/images/posts/Android/aabfileformat.png"></p>
 <p>使用AS生成aab文件，生成的aab文件为1.2MB，而APK文件大小为1.6MB：</p>
-<p><img src="/images/posts/Android/generateaab.png" alt="" /></p>
+<p><img src="/images/posts/Android/generateaab.png"></p>
 <p>使用Android Studio的APK Analyzer tool 分析样例<code>helloworld.aab</code>，可以看出该APK的归档文件概况：</p>
-<p><img src="/images/posts/Android/aabcontents.png" alt="" /></p>
+<p><img src="/images/posts/Android/aabcontents.png"></p>
 <ul>
 <li><code>BUNDLE-METADATA/</code>：此目录包含元数据文件，其中包含对工具或应用商店有用的信息。此类元数据文件可能包含 ProGuard 映射和应用的 DEX 文件的完整列表。此目录中的文件未打包到您应用的 APK 中。</li>
 <li>模块协议缓冲区 (<code>*.pb</code>) 文件：这些文件提供了一些元数据，有助于向各个应用商店（如 Google Play）说明每个应用模块的内容。例如， <code>BundleConfig.pb</code> 提供了有关 bundle 本身的信息（如用于构建 app bundle 的构建工具版本），<code>native.pb</code> 和 <code>resources.pb</code> 说明了每个模块中的代码和资源，这在 Google Play 针对不同的设备配置优化 APK 时非常有用。</li>
@@ -1843,63 +1843,63 @@ APK 打包器使用调试或发布密钥库为 APK 签名：<br />
 <p>使用bundletool生成apks：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">java -jar bundletool-all-1.7.0.jar build-apks --bundle<span class="o">=</span>app-debug.aab --output<span class="o">=</span>helloworld.apks
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -jar bundletool-all-1.7.0.jar build-apks --bundle<span class="o">=</span>app-debug.aab --output<span class="o">=</span>helloworld.apks
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>生成的apks是一个压缩包，查看apks压缩包，主要由<code>toc.pb</code>文件、<code>splits</code>文件夹、<code>standalones</code>文件夹组成：</p>
-<p><img src="/images/posts/Android/apksarchive.png" alt="" /></p>
+<p><img src="/images/posts/Android/apksarchive.png"></p>
 <p>使用密钥文件可以生成签名的APK文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">java -jar bundletool.jar build-apks --bundle<span class="o">=</span>test.aab --output<span class="o">=</span>test.apks --ks<span class="o">=</span>keystore.jks --ks-pass<span class="o">=</span>pass:your_keystore_password --ks-key-alias<span class="o">=</span>your_key_alias --key-pass<span class="o">=</span>pass:your_key_password
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -jar bundletool.jar build-apks --bundle<span class="o">=</span>test.aab --output<span class="o">=</span>test.apks --ks<span class="o">=</span>keystore.jks --ks-pass<span class="o">=</span>pass:your_keystore_password --ks-key-alias<span class="o">=</span>your_key_alias --key-pass<span class="o">=</span>pass:your_key_password
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>只提取一个APK：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">java -jar bundletool.jar build-apks --bundle<span class="o">=</span>test.aab --output<span class="o">=</span>nhl.apks --mode<span class="o">=</span>universal
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -jar bundletool.jar build-apks --bundle<span class="o">=</span>test.aab --output<span class="o">=</span>nhl.apks --mode<span class="o">=</span>universal
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/Android/singleapk.png" alt="" /></p>
+</div><p><img src="/images/posts/Android/singleapk.png"></p>
 <p>提取一个签名的通用APK文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">java -jar bundletool.jar build-apks --bundle<span class="o">=</span>nhl.aab --output<span class="o">=</span>test.apks --overwrite --mode<span class="o">=</span>universal -ks<span class="o">=</span>keystore.jks --ks-pass<span class="o">=</span>pass:your_keystore_password --ks-key-alias<span class="o">=</span>your_key_alias --key-pass<span class="o">=</span>pass:your_key_password
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -jar bundletool.jar build-apks --bundle<span class="o">=</span>nhl.aab --output<span class="o">=</span>test.apks --overwrite --mode<span class="o">=</span>universal -ks<span class="o">=</span>keystore.jks --ks-pass<span class="o">=</span>pass:your_keystore_password --ks-key-alias<span class="o">=</span>your_key_alias --key-pass<span class="o">=</span>pass:your_key_password
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>安装apks到当前设备，运行成功：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">bundletool install-apks --apks<span class="o">=</span>test.apks
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bundletool install-apks --apks<span class="o">=</span>test.apks
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/Android/installapk.png" alt="" /></p>
+</div><p><img src="/images/posts/Android/installapk.png"></p>
 <h2 id="aab2apk">aab2apk</h2>
 <p>在某些测试场景中，需要对aab进行转换，且获取到aab文件的一些基本信息，编写了<a href="https://github.com/zz1gg/aab2apk">aab2apk</a>小工具。</p>
 <p>在Windows上的使用，如下：</p>
-<pre><code>aab2apk.exe -e test.aab -o test.apk
-</code></pre><p><img src="/images/posts/Android/aab2apk_Windows.png" alt="" /></p>
+<pre tabindex="0"><code>aab2apk.exe -e test.aab -o test.apk
+</code></pre><p><img src="/images/posts/Android/aab2apk_Windows.png"></p>
 <p>在Mac上的使用，如下：</p>
-<pre><code>./aab2apk_mac -e test.aab -o test.apk
-</code></pre><p><img src="/images/posts/Android/aab2apk_mac.png" alt="" /></p>
+<pre tabindex="0"><code>./aab2apk_mac -e test.aab -o test.apk
+</code></pre><p><img src="/images/posts/Android/aab2apk_mac.png"></p>
 <p>在Ubuntu上的使用，如下：</p>
-<pre><code>./aab2apk_linux -e test.aab -o test.apk
-</code></pre><p><img src="/images/posts/Android/aab2apk_Ubuntu.png" alt="" /></p>
+<pre tabindex="0"><code>./aab2apk_linux -e test.aab -o test.apk
+</code></pre><p><img src="/images/posts/Android/aab2apk_Ubuntu.png"></p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.androidauthority.com/android-apks-sunset-1636829/">https://www.androidauthority.com/android-apks-sunset-1636829/</a></li>
@@ -2212,6 +2212,13 @@ APK 打包器使用调试或发布密钥库为 APK 签名：<br />
     
     <div class="grow"></div>
     
+      <a href="https://zz1gg.github.io/posts/talk-about-golang-informally/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">Golang杂记</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
+    
   
 </nav>
     
@@ -2264,7 +2271,7 @@ APK 打包器使用调试或发布密钥库为 APK 签名：<br />
 </div>
 
 
-<script defer src="/js/swipe.min.989e074dfb92ce7f57a92c1df7027f88b53c50a54fd9ad450a673a64aa91bfa4.js"></script>
+<script defer src="/js/swipe.min.feb438efb7ca009ecd7fc2ac3ad2fced4840990b2798d81f87137f2dc6281f05.js"></script>
 
 <script defer src="/js/micromodal.min.de01b44b2f383056bbcaf6ee921fd385d79108ec1129afd0eb2f3f5a07e11f45.js"></script>
 
@@ -2923,7 +2930,7 @@ document.addEventListener('DOMContentLoaded', function () {
       e.trigger.classList.add('tooltipped');
       e.trigger.classList.add('tooltipped-s');
     });
-    // =================================================================
+    
 
 
 
@@ -3236,7 +3243,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
             <p class="caption">
                 
-                    ©2021, All Rights Reserved
+                    ©2024, All Rights Reserved
                 
             </p>
         

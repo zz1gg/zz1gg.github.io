@@ -18,9 +18,9 @@
 
 <script defer src="/js/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js"></script>
 
-<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
+<script defer src="/js/helper/getParents.min.086022fb02d7a1517e33c2670bffb976b3e80bcacd9caeee0c6a586064f20e42.js"></script>
 
-<script defer src="/js/helper/fadeinout.min.1d13d3e810c3940e80cbba6216a1c76fbf42b5431fc83537ea6997863802362b.js"></script>
+<script defer src="/js/helper/fadeinout.min.3ce954c8aea3b69cc5e6f734d8273ba4cd48d3a7987dbdca145849bc4b8fc296.js"></script>
 
 <script defer src="/js/helper/closest.min.js"></script>
   
@@ -651,7 +651,7 @@
 
   
     
-    var baseurl = JSON.parse("\"https://zz1gg.github.io\"");
+    var baseurl = JSON.parse("\"https://zz1gg.github.io/\"");
     
     var permalink = JSON.parse("\"https://zz1gg.github.io/\"");
     
@@ -1331,14 +1331,14 @@
 
 
     
-<link rel="alternate" type="application/rss&#43;xml" title="RSS" href="https://zz1gg.github.io/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" title="rss" href="https://zz1gg.github.io/index.xml">
 
 <meta name="description" content="zz1gg&#39;s Blog" />
 
 
-<meta name="created" content="2021-07-20T12:00:06&#43;0900">
-<meta name="modified" content="2021-07-20T12:00:06&#43;0900">
-<meta property="article:published_time" content="2021-07-20T12:00:06&#43;0900">
+<meta name="created" content="2024-01-26T22:13:42&#43;0900">
+<meta name="modified" content="2024-01-26T22:13:42&#43;0900">
+<meta property="article:published_time" content="2024-01-26T22:13:42&#43;0900">
 
 <meta name="author" content="zz1gg">
 
@@ -1354,11 +1354,11 @@
     <meta property="og:image:url" content="https://zz1gg.github.io/images/meta/localhostpng.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:app:name:iphone" content="zz1gg&#39;s Blog">
-    <meta property="twitter:title" content="zz1gg&#39;s Blog">
+    <meta property="twitter:title" content="">
     <meta property="twitter:description" content="zz1gg&#39;s Blog">
   
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.124.1">
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1398,12 +1398,12 @@
     "description": "zz1gg's Blog",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://zz1gg.github.io"
+      "@id": "https://zz1gg.github.io/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "zz1gg's Blog",
-      "url": "https://zz1gg.github.io"
+      "url": "https://zz1gg.github.io/"
     }
   }
 </script>
@@ -1749,6 +1749,88 @@
 
     
     <div class="summary-classic__image-container summary-classic__image-wrapper" data-position="right" data-hwm="">
+      <a href="https://zz1gg.github.io/posts/processhollowing/">
+        <img data-src="/images/posts/Process_Hollowing/processhollowing_shellcode/Process_Injection.png" alt="Process Hollowing" src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload summary-classic__image" data-ani="true" data-hwm="" style=""/>
+      </a>
+    </div>
+    
+
+    <div class="summary-classic__content">
+      <header>
+        <h5 class="title h5"><a href='https://zz1gg.github.io/posts/processhollowing/'>Process Hollowing</a> </h5>
+        <h6 class="subtitle caption">
+          <time title="创建日期" dir="ltr">📅&nbsp;2024年01月24日 </time>
+          
+          <span title="阅读时长" dir="ltr"> &middot; ☕&nbsp;12&nbsp;分钟 </span>
+          
+          &middot; <span title="作者" dir="ltr">🤖 👽&nbsp;zz1gg</span>
+          
+        </h6>
+      </header>
+      <div>
+        <div class="summary-classic__text p2">
+          
+            <p>关于目标进程调试与分析、Shellcode注入到目标进程的 Process Hollowing的实现思路，以及Process Hollowing（Shellcode）攻击延展的攻击检测防御思路。</p>
+          
+        </div>
+      </div>
+    </div>
+
+    
+    
+  </div>
+  <hr />
+</article>
+
+
+            
+                
+  <article class="summary-classic" data-ani="true">
+  <div class="summary-classic__flex-box" >
+
+    
+    <div class="summary-classic__image-container summary-classic__image-wrapper" data-position="right" data-hwm="">
+      <a href="https://zz1gg.github.io/posts/talk-about-golang-informally/">
+        <img data-src="/images/posts/talk_about_golang/logo.png" alt="Golang杂记" src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload summary-classic__image" data-ani="true" data-hwm="" style=""/>
+      </a>
+    </div>
+    
+
+    <div class="summary-classic__content">
+      <header>
+        <h5 class="title h5"><a href='https://zz1gg.github.io/posts/talk-about-golang-informally/'>Golang杂记</a> </h5>
+        <h6 class="subtitle caption">
+          <time title="创建日期" dir="ltr">📅&nbsp;2021年12月12日 </time>
+          
+          <span title="阅读时长" dir="ltr"> &middot; ☕&nbsp;36&nbsp;分钟 </span>
+          
+          &middot; <span title="作者" dir="ltr">🤖 👽&nbsp;zz1gg</span>
+          
+        </h6>
+      </header>
+      <div>
+        <div class="summary-classic__text p2">
+          
+            <p>本文主要整理、记录了笔者在Golang的学习、使用过程中碰到的一些有意思的方面，内容包括但不限于编译生成、程序的元数据、代码函数、汇编、堆栈、安全。</p>
+          
+        </div>
+      </div>
+    </div>
+
+    
+    
+  </div>
+  <hr />
+</article>
+
+
+            
+                
+  <article class="summary-classic" data-ani="true">
+  <div class="summary-classic__flex-box" >
+
+    
+    <div class="summary-classic__image-container summary-classic__image-wrapper" data-position="right" data-hwm="">
       <a href="https://zz1gg.github.io/posts/aabtoapk/">
         <img data-src="/images/posts/Android/aabtoapk.png" alt="AAB转换APK" src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload summary-classic__image" data-ani="true" data-hwm="" style=""/>
       </a>
@@ -1959,6 +2041,14 @@
             <ul class="sidebar-recent__ul">
                 
                     <li>
+                        <a href="/posts/processhollowing/" class="sidebar-recent__a p2">Process Hollowing</a>
+                    </li>
+                
+                    <li>
+                        <a href="/posts/talk-about-golang-informally/" class="sidebar-recent__a p2">Golang杂记</a>
+                    </li>
+                
+                    <li>
                         <a href="/posts/aabtoapk/" class="sidebar-recent__a p2">AAB转换APK</a>
                     </li>
                 
@@ -1984,7 +2074,7 @@
             <span class="tag">
                 <a href="/tags/aab/" class="is-tags taxo__link" data-dir="ltr">
                     <span class="taxo__text">
-                        aab
+                        Aab
                     </span>
                     <span class="taxo__num" dir="auto">
                         1
@@ -2010,7 +2100,46 @@
             <span class="tag">
                 <a href="/tags/apk/" class="is-tags taxo__link" data-dir="ltr">
                     <span class="taxo__text">
-                        apk
+                        Apk
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/go/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Go
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/golang/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Golang
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        2
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/ida/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        IDA
                     </span>
                     <span class="taxo__num" dir="auto">
                         1
@@ -2023,7 +2152,85 @@
             <span class="tag">
                 <a href="/tags/index/" class="is-tags taxo__link" data-dir="ltr">
                     <span class="taxo__text">
-                        index
+                        Index
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/processhollowing/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        ProcessHollowing
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/reverse/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Reverse
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/sec/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Sec
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/shellcode/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Shellcode
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/windbg/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Windbg
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/windows/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Windows
                     </span>
                     <span class="taxo__num" dir="auto">
                         1
@@ -2047,9 +2254,35 @@
         
         
             <span class="tag">
+                <a href="/categories/golang/" class="is-categories taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Golang
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
                 <a href="/categories/mobile/" class="is-categories taxo__link" data-dir="ltr">
                     <span class="taxo__text">
                         Mobile
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/categories/windows/" class="is-categories taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Windows
                     </span>
                     <span class="taxo__num" dir="auto">
                         1
@@ -2079,6 +2312,32 @@
                     </span>
                     <span class="taxo__num" dir="auto">
                         1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/bin/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Bin
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/golang/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Golang
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        2
                     </span>
                 </a>
             </span>
@@ -2289,7 +2548,7 @@
                 
             <p class="caption">
                 
-                    ©2021, All Rights Reserved
+                    ©2024, All Rights Reserved
                 
             </p>
         

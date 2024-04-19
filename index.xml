@@ -11,8 +11,8 @@
     <description>Recent content on zz1gg&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 20 Jul 2021 12:00:06 +0900</lastBuildDate>
+    <copyright>©2024, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 26 Jan 2024 22:13:42 +0900</lastBuildDate>
     
         <atom:link href="https://zz1gg.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -34,6 +34,114 @@
 
       
       <item>
+        <title>Process Hollowing</title>
+        <link>https://zz1gg.github.io/posts/processhollowing/</link>
+        <pubDate>Wed, 24 Jan 2024 23:02:31 +0900</pubDate>
+        
+        <atom:modified>Wed, 24 Jan 2024 23:02:31 +0900</atom:modified>
+        <guid>https://zz1gg.github.io/posts/processhollowing/</guid>
+        <description>&lt;p&gt;关于目标进程调试与分析、Shellcode注入到目标进程的 Process Hollowing的实现思路，以及Process Hollowing（Shellcode）攻击延展的攻击检测防御思路。&lt;/p&gt;</description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        <media:content url="https://zz1gg.github.io/images/posts/Process_Hollowing/processhollowing_shellcode/Process_Injection.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Windows</category>
+            
+          
+            
+              <category>ProcessHollowing</category>
+            
+          
+            
+              <category>shellcode</category>
+            
+          
+            
+              <category>Golang</category>
+            
+          
+            
+              <category>windbg</category>
+            
+          
+        
+        
+          
+            
+              <category>Windows</category>
+            
+          
+        
+        
+          
+            
+              <category>Bin</category>
+            
+          
+            
+              <category>Golang</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Golang杂记</title>
+        <link>https://zz1gg.github.io/posts/talk-about-golang-informally/</link>
+        <pubDate>Sun, 12 Dec 2021 12:00:06 +0900</pubDate>
+        
+        <atom:modified>Sun, 12 Dec 2021 12:00:06 +0900</atom:modified>
+        <guid>https://zz1gg.github.io/posts/talk-about-golang-informally/</guid>
+        <description>&lt;p&gt;本文主要整理、记录了笔者在Golang的学习、使用过程中碰到的一些有意思的方面，内容包括但不限于编译生成、程序的元数据、代码函数、汇编、堆栈、安全。&lt;/p&gt;</description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        <media:content url="https://zz1gg.github.io/images/posts/talk_about_golang/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Golang</category>
+            
+          
+            
+              <category>go</category>
+            
+          
+            
+              <category>sec</category>
+            
+          
+            
+              <category>IDA</category>
+            
+          
+            
+              <category>reverse</category>
+            
+          
+        
+        
+          
+            
+              <category>Golang</category>
+            
+          
+        
+        
+          
+            
+              <category>Golang</category>
+            
+          
+        
+      </item>
+      
+      <item>
         <title>AAB转换APK</title>
         <link>https://zz1gg.github.io/posts/aabtoapk/</link>
         <pubDate>Tue, 20 Jul 2021 12:00:06 +0900</pubDate>
@@ -43,7 +151,7 @@
         <description>&lt;p&gt;aab文件转换为apk文件&lt;/p&gt;</description>
         
         <dc:creator>zz1gg</dc:creator>
-        <media:content url="https://zz1gg.github.ioimages/posts/Android/aabtoapk.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://zz1gg.github.io/images/posts/Android/aabtoapk.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

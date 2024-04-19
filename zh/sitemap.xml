@@ -5,11 +5,23 @@
     <loc>https://zz1gg.github.io/showcase/sec/aab2apk/</loc>
     <lastmod>2021-07-20T12:00:06+09:00</lastmod>
   </url><url>
+    <loc>https://zz1gg.github.io/showcase/sec/gololspoof/</loc>
+    <lastmod>2024-01-26T22:13:42+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/showcase/sec/processhollowing/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/showcase/sec/secdemo/</loc>
+    <lastmod>2023-12-26T23:02:31+09:00</lastmod>
+  </url><url>
     <loc>https://zz1gg.github.io/showcase/sec/pdog/</loc>
     <lastmod>2020-06-21T21:13:42+09:00</lastmod>
   </url><url>
+    <loc>https://zz1gg.github.io/showcase/sec/avchecker/</loc>
+    <lastmod>2020-01-02T20:10:40+09:00</lastmod>
+  </url><url>
     <loc>https://zz1gg.github.io/</loc>
-    <lastmod>2021-07-20T12:00:06+09:00</lastmod>
+    <lastmod>2024-01-26T22:13:42+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -20,6 +32,96 @@
                 hreflang="zh"
                 href="https://zz1gg.github.io/"
                 />
+  </url><url>
+    <loc>https://zz1gg.github.io/series/bin/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/categories/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://zz1gg.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://zz1gg.github.io/categories/"
+                />
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/golang/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/series/golang/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/index/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/posts/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/posts/processhollowing/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/processhollowing/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/series/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://zz1gg.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://zz1gg.github.io/series/"
+                />
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/shellcode/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://zz1gg.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://zz1gg.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/windbg/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/windows/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/categories/windows/</loc>
+    <lastmod>2024-01-24T23:02:31+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/go/</loc>
+    <lastmod>2021-12-12T12:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/categories/golang/</loc>
+    <lastmod>2021-12-12T12:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/posts/talk-about-golang-informally/</loc>
+    <lastmod>2021-12-12T12:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/ida/</loc>
+    <lastmod>2021-12-12T12:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/reverse/</loc>
+    <lastmod>2021-12-12T12:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/sec/</loc>
+    <lastmod>2021-12-12T12:00:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/tags/aab/</loc>
     <lastmod>2021-07-20T12:00:06+09:00</lastmod>
@@ -36,50 +138,8 @@
     <loc>https://zz1gg.github.io/tags/apk/</loc>
     <lastmod>2021-07-20T12:00:06+09:00</lastmod>
   </url><url>
-    <loc>https://zz1gg.github.io/categories/</loc>
-    <lastmod>2021-07-20T12:00:06+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://zz1gg.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://zz1gg.github.io/categories/"
-                />
-  </url><url>
     <loc>https://zz1gg.github.io/categories/mobile/</loc>
     <lastmod>2021-07-20T12:00:06+09:00</lastmod>
-  </url><url>
-    <loc>https://zz1gg.github.io/posts/</loc>
-    <lastmod>2021-07-20T12:00:06+09:00</lastmod>
-  </url><url>
-    <loc>https://zz1gg.github.io/series/</loc>
-    <lastmod>2021-07-20T12:00:06+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://zz1gg.github.io/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://zz1gg.github.io/series/"
-                />
-  </url><url>
-    <loc>https://zz1gg.github.io/tags/</loc>
-    <lastmod>2021-07-20T12:00:06+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://zz1gg.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://zz1gg.github.io/tags/"
-                />
   </url><url>
     <loc>https://zz1gg.github.io/about/</loc>
     <lastmod>2021-02-28T00:00:00+00:00</lastmod>
@@ -92,7 +152,5 @@
   </url><url>
     <loc>https://zz1gg.github.io/archive/</loc>
     <lastmod>2019-10-19T11:44:14+09:00</lastmod>
-  </url><url>
-    <loc>https://zz1gg.github.io/tags/index/</loc>
   </url>
 </urlset>

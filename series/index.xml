@@ -12,11 +12,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>©2024, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 24 Jan 2024 23:02:31 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2024 23:59:06 +0900</lastBuildDate>
     
         <atom:link href="https://zz1gg.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>WinAPI</title>
+        <link>https://zz1gg.github.io/series/winapi/</link>
+        <pubDate>Fri, 17 May 2024 23:59:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/series/winapi/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>Bin</title>

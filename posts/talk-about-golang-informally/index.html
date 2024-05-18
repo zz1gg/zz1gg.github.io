@@ -1831,7 +1831,7 @@
 <h2 id="前言">前言</h2>
 <p>Golang于2007年诞生，旨在构建一种轻量级且令人愉悦的高效编译编程语言。它可扩展性高、并发强、语法简洁、可跨平台、还支持GC，有的人会因此喜欢上它。有的人也会因为生成的文件过大，且其生态系统和第三方库相对较小，缺少一些成熟的解决方案，不会去选择拥抱它。但“不管黑猫白猫，能捉老鼠的就是好猫”，只要能解决目标场景所遇到的问题，其存在就有一定的合理性和有趣点。</p>
 <blockquote>
-<p>关于Golang的介绍可至 <a href="https://talks.golang.org/2012/splash.article">https://talks.golang.org/2012/splash.article</a> 阅读。</p>
+<p>关于Golang的介绍可至 <a href="https://talks.golang.org/2012/splash.article">https://talks.golang.org/2012/splash.article</a>  阅读。</p>
 </blockquote>
 <h2 id="golang文件">Golang文件</h2>
 <p>Golang源码的基本构成：go语言的代码通过包(package)组织，包类似于其他语言的库(libraries)或者模块(modules)。一个包由位于单个目录下的一个或多个.go源文件组成，目录定义包的作用。每个源文件都以一条package声明语句开始（如package main）,指明这个文件属于哪个包。后面跟着它导入的其他包的列表，然后是存储在文件中的程序声明。</p>
@@ -1909,14 +1909,14 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">file hello_Go
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">strings -af hello_Go <span class="p">|</span> grep -E <span class="s2">&#34;((\&#34;?)([a-zA-Z0-9_-]{20})\/)(([a-zA-Z0-9_-]{20})\/([a-zA-Z0-9_-]){20}\/([a-zA-Z0-9_-]){20}(\&#34;?)</span>$<span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">strings -af hello_Go <span class="p">|</span> grep -E <span class="s2">&#34;((\&#34;?)([a-zA-Z0-9_-]{20})\/)(([a-zA-Z0-9_-]{20})\/([a-zA-Z0-9_-]){20}\/([a-zA-Z0-9_-]){20}(\&#34;?)</span>$<span class="s2">)&#34;</span> 
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img alt="Go Build ID图" src="/images/posts/talk_about_golang/gobuildid.png"></p>
 <p>也可以使用YARA规则进行识别，YARA规则可见 <a href="https://github.com/SentineLabs/AlphaGolang">https://github.com/SentineLabs/AlphaGolang</a> ：</p>
 <pre tabindex="0"><code>rule TTP_GoBuildID
 {
-    meta:
+    meta:  
         desc = &#34;Quick rule to identify Golang binaries (PE,ELF,Macho)&#34;
         author = &#34;JAG-S @ SentinelLabs&#34;
         version = &#34;1.0&#34;
@@ -1927,12 +1927,12 @@
 
     condition:
         (
-            (uint16(0) == 0x5a4d) or
-            (uint32(0)==0x464c457f) or
-            (uint32(0) == 0xfeedfacf) or
-            (uint32(0) == 0xcffaedfe) or
-            (uint32(0) == 0xfeedface) or
-            (uint32(0) == 0xcefaedfe)
+            (uint16(0) == 0x5a4d) or 
+            (uint32(0)==0x464c457f) or 
+            (uint32(0) == 0xfeedfacf) or 
+            (uint32(0) == 0xcffaedfe) or 
+            (uint32(0) == 0xfeedface) or 
+            (uint32(0) == 0xcefaedfe) 
         )
         and
         #GoBuildId == 1
@@ -2436,7 +2436,7 @@
 </li>
 </ul>
 <p><img src="/images/posts/talk_about_golang/pcHeader_example_example1_main.png"></p>
-<p>按<code>空格键</code>切换反汇编窗口，得到汇编视图:</p>
+<p> 按<code>空格键</code>切换反汇编窗口，得到汇编视图:</p>
 <p><img src="/images/posts/talk_about_golang/pcHeader_example_example1_main_asm.png"></p>
 <blockquote>
 <p><code>small allocations</code>是直接通过<code>mcache</code>来分配的。对于<code>tiny allocations</code>的分配，有一个微型分配器<code>tiny allocator</code>来分配，分配的对象都是不包含指针的，例如一些小的字符串和不包含指针的独立的逃逸变量等。<code>small allocations</code>的分配，就是<code>mcache</code>根据对象的大小来找自身存在的大小相匹配<code>mspan</code>来分配。<br />
@@ -2786,7 +2786,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rule TTP_GoBuildID
 </span></span><span class="line"><span class="cl"><span class="o">{</span>
-</span></span><span class="line"><span class="cl">    meta:
+</span></span><span class="line"><span class="cl">    meta:  
 </span></span><span class="line"><span class="cl">        <span class="nv">desc</span> <span class="o">=</span> <span class="s2">&#34;Quick rule to identify Golang binaries (PE,ELF,Macho)&#34;</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">author</span> <span class="o">=</span> <span class="s2">&#34;JAG-S @ SentinelLabs&#34;</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">version</span> <span class="o">=</span> <span class="s2">&#34;1.0&#34;</span>
@@ -2797,12 +2797,12 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    condition:
 </span></span><span class="line"><span class="cl">        <span class="o">(</span>
-</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint16<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0x5a4d<span class="o">)</span> or
-</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)==</span>0x464c457f<span class="o">)</span> or
-</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0xfeedfacf<span class="o">)</span> or
-</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0xcffaedfe<span class="o">)</span> or
-</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0xfeedface<span class="o">)</span> or
-</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0xcefaedfe<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint16<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0x5a4d<span class="o">)</span> or 
+</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)==</span>0x464c457f<span class="o">)</span> or 
+</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0xfeedfacf<span class="o">)</span> or 
+</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0xcffaedfe<span class="o">)</span> or 
+</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0xfeedface<span class="o">)</span> or 
+</span></span><span class="line"><span class="cl">            <span class="o">(</span>uint32<span class="o">(</span>0<span class="o">)</span> <span class="o">==</span> 0xcefaedfe<span class="o">)</span> 
 </span></span><span class="line"><span class="cl">        <span class="o">)</span>
 </span></span><span class="line"><span class="cl">        and
 </span></span><span class="line"><span class="cl">        <span class="c1">#GoBuildId == 1</span>
@@ -2823,7 +2823,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <hr />
 <p>通常使用下图类似的代码结构创建字符串：</p>
 <p><img src="/images/posts/talk_about_golang/example_mal2_IDA_string.png"></p>
-<p>然后使用快捷键<code>Alt+Q</code> 和<code>T</code> 对一个结构体偏移量进行更改应用。（<code>Alt + Q </code>将某一组数据定义为某结构体）</p>
+<p>然后使用快捷键<code>Alt+Q</code>  和<code>T</code> 对一个结构体偏移量进行更改应用。（<code>Alt + Q </code>将某一组数据定义为某结构体）</p>
 <p>虽然该样例主要是说明静态分析，但是可以拓展一下，重命名的函数可以使用以下插件转移到x64dbg中：</p>
 <ul>
 <li><a href="https://github.com/a1ext/labeless">Labeless</a>: <a href="https://github.com/a1ext/labeless">https://github.com/a1ext/labeless</a></li>
@@ -2866,7 +2866,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <p>点击<code>00000000006D65301</code>地址处的<code>os_user_Current</code> 进入<code>os_user_Current</code> 函数：</p>
 <p><img src="/images/posts/talk_about_golang/example_mal2_os_user_Current.png"></p>
 <blockquote>
-<p><code>runtime.typedmemmove</code> 将发送的数据拷贝到缓冲区，类似于C中的<code>memcpy()</code></p>
+<p> <code>runtime.typedmemmove</code> 将发送的数据拷贝到缓冲区，类似于C中的<code>memcpy()</code></p>
 </blockquote>
 <blockquote>
 <p>sync包有一个Once结构体和对象，它保存一个类型互斥锁字段(m)，<code>doSlow(f func())</code>函数对m使用<code>Lock()</code>，并保证它返回时，已经完成。简而言之，<code>doSlow</code>实现了同步，如果传入的函数没有执行过，会调用<code>sync.Once.doSlow</code>执行传入的函数</p>
@@ -2977,10 +2977,10 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod a+x &lt;ELF_FILE&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod a+x &lt;ELF_FILE&gt; 
 </span></span><span class="line"><span class="cl">r2 -d &lt;ELF_FILE&gt; <span class="c1">#调试文件或进程</span>
 </span></span><span class="line"><span class="cl">aaa <span class="c1">#自动分析</span>
-</span></span><span class="line"><span class="cl">afl <span class="p">|</span> grep <span class="s1">&#39;main&#39;</span> <span class="o">(</span><span class="k">for</span> listing functions in radare2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">afl <span class="p">|</span> grep <span class="s1">&#39;main&#39;</span> <span class="o">(</span><span class="k">for</span> listing functions in radare2<span class="o">)</span> 
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>该恶意程序是通过AES加密，且在内存中解密运行：</p>
@@ -3013,7 +3013,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gdb ./73dec430b98ade79485f76d405c7a9b325df7492b4f97985499a46701553e34a
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gdb ./73dec430b98ade79485f76d405c7a9b325df7492b4f97985499a46701553e34a 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> info functions
 </span></span></code></pre></td></tr></table>
@@ -3033,7 +3033,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">b syscall.write
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">b syscall.write 
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="/images/posts/talk_about_golang/example3_mal_b_write.png"></p>
@@ -3047,7 +3047,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">p p <span class="c1">#打印变量</span>
-</span></span><span class="line"><span class="cl">dump binary memory &lt;path&gt; &lt;array&gt; <span class="o">(</span>array+len<span class="o">)</span>
+</span></span><span class="line"><span class="cl">dump binary memory &lt;path&gt; &lt;array&gt; <span class="o">(</span>array+len<span class="o">)</span> 
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="/images/posts/talk_about_golang/example3_mal_dump_miner.png"></p>
@@ -3124,7 +3124,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <li>SB：Static Base的缩写，表示这是一个静态基址。在Go的汇编中，SB表示的是全局静态数据的起始地址。</li>
 </ul>
 <p><code>ABIInternal</code> 表示函数使用 Go 内部的 ABI（Application Binary Interface），而不是与操作系统的 ABI 交互。(Go函数的调用约定和数据布局是根据 Go 的规范定义的，而不是根据底层操作系统的规范)。</p>
-<p><code>$0-0</code> 表示该函数没有参数和返回值。第一个数字（0）表示传入参数的大小，第二个数字（0）表示返回值的大小。因为函数没有参数或返回值，所以它们的大小都是零。</p>
+<p><code>$0-0</code>  表示该函数没有参数和返回值。第一个数字（0）表示传入参数的大小，第二个数字（0）表示返回值的大小。因为函数没有参数或返回值，所以它们的大小都是零。</p>
 <p>汇编代码主要分为两个部分，第一个部分是<code>EmptyFunc()</code>函数，第二个部分是<code>main()</code>函数：</p>
 <ol>
 <li><code>EmptyFunc()</code>函数汇编代码：包含一条RET指令，意味着函数调用结束后会直接返回。</li>
@@ -3188,7 +3188,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#编译器自动优化</span>
 </span></span><span class="line"><span class="cl">go build -o empty_optimize empty.go
-</span></span><span class="line"><span class="cl">go tool objdump empty_optimize
+</span></span><span class="line"><span class="cl">go tool objdump empty_optimize 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#禁止编译器优化</span>
 </span></span><span class="line"><span class="cl">go build -gcflags <span class="s2">&#34;-N -l&#34;</span> -o empty_no_optimize empty.go <span class="c1">#禁止内联优化</span>
@@ -3269,6 +3269,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-ASM" data-lang="ASM"><span class="line"><span class="cl"><span class="nf">TEXT</span> <span class="no">main.EmptyFunc</span><span class="p">(</span><span class="no">SB</span><span class="p">)</span> <span class="err">/</span><span class="no">home</span><span class="err">/</span><span class="no">kali</span><span class="err">/</span><span class="no">Desktop</span><span class="err">/</span><span class="no">demo</span><span class="err">/</span><span class="no">empty.go</span>
@@ -3288,6 +3289,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl">  <span class="nl">empty.go:</span><span class="err">8</span>            <span class="err">0</span><span class="nf">x45ecad</span>                <span class="no">c3</span>                      <span class="no">RET</span>
 </span></span><span class="line"><span class="cl">  <span class="nl">empty.go:</span><span class="err">5</span>            <span class="err">0</span><span class="nf">x45ecae</span>                <span class="no">e8adafffff</span>              <span class="no">CALL</span> <span class="no">runtime.morestack_noctxt</span><span class="p">(</span><span class="no">SB</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nl">empty.go:</span><span class="err">5</span>            <span class="err">0</span><span class="nf">x45ecb3</span>                <span class="no">ebcb</span>                    <span class="no">JMP</span> <span class="no">main.main</span><span class="p">(</span><span class="no">SB</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                                                                              
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>将调用的函数加上返回值，创建函数为<code>FuncConst</code>并调用：</p>

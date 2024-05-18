@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Beep on zz1gg&#39;s Blog</title>
+    <link>https://zz1gg.github.io/tags/beep/</link>
+    <description>Recent content in Beep on zz1gg&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2024, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 17 May 2024 23:59:06 +0900</lastBuildDate>
+    
+        <atom:link href="https://zz1gg.github.io/tags/beep/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>滥用Beep函数规避检测</title>
+        <link>https://zz1gg.github.io/posts/beep-function/</link>
+        <pubDate>Fri, 17 May 2024 23:59:06 +0900</pubDate>
+        
+        <atom:modified>Fri, 17 May 2024 23:59:06 +0900</atom:modified>
+        <guid>https://zz1gg.github.io/posts/beep-function/</guid>
+        <description>&lt;p&gt;编写&lt;code&gt;Beep&lt;/code&gt;函数的POC代码和frida脚本（模拟检测沙箱），模拟Beep规避沙箱的检测机制。&lt;/p&gt;</description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        <media:content url="https://zz1gg.github.io/images/posts/beep_function/beep_function_win32.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Windows</category>
+            
+          
+            
+              <category>beep</category>
+            
+          
+            
+              <category>frida</category>
+            
+          
+            
+              <category>anti-sandbox</category>
+            
+          
+            
+              <category>Golang</category>
+            
+          
+            
+              <category>Hook</category>
+            
+          
+        
+        
+          
+            
+              <category>Windows</category>
+            
+          
+        
+        
+          
+            
+              <category>WinAPI</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

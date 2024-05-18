@@ -12,11 +12,67 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>©2024, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 24 Jan 2024 23:02:31 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2024 23:59:06 +0900</lastBuildDate>
     
         <atom:link href="https://zz1gg.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>滥用Beep函数规避检测</title>
+        <link>https://zz1gg.github.io/posts/beep-function/</link>
+        <pubDate>Fri, 17 May 2024 23:59:06 +0900</pubDate>
+        
+        <atom:modified>Fri, 17 May 2024 23:59:06 +0900</atom:modified>
+        <guid>https://zz1gg.github.io/posts/beep-function/</guid>
+        <description>&lt;p&gt;编写&lt;code&gt;Beep&lt;/code&gt;函数的POC代码和frida脚本（模拟检测沙箱），模拟Beep规避沙箱的检测机制。&lt;/p&gt;</description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        <media:content url="https://zz1gg.github.io/images/posts/beep_function/beep_function_win32.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Windows</category>
+            
+          
+            
+              <category>beep</category>
+            
+          
+            
+              <category>frida</category>
+            
+          
+            
+              <category>anti-sandbox</category>
+            
+          
+            
+              <category>Golang</category>
+            
+          
+            
+              <category>Hook</category>
+            
+          
+        
+        
+          
+            
+              <category>Windows</category>
+            
+          
+        
+        
+          
+            
+              <category>WinAPI</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>Process Hollowing</title>

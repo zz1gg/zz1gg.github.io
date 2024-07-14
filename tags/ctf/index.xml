@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>CTF on zz1gg&#39;s Blog</title>
+    <link>https://zz1gg.github.io/tags/ctf/</link>
+    <description>Recent content in CTF on zz1gg&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2024, All Rights Reserved</copyright>
+    <lastBuildDate>Sat, 13 Jul 2024 14:00:06 +0900</lastBuildDate>
+    
+        <atom:link href="https://zz1gg.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Prompt Injection CTF Game writeup</title>
+        <link>https://zz1gg.github.io/posts/prompt-injection-game-writeup/</link>
+        <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
+        
+        <atom:modified>Sat, 13 Jul 2024 14:00:06 +0900</atom:modified>
+        <guid>https://zz1gg.github.io/posts/prompt-injection-game-writeup/</guid>
+        <description>&lt;p&gt;Some AI Prompt Injection CTF Game writeup, like Gandalf, Immersive Labs, doublespeak&amp;hellip;&lt;/p&gt;</description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        <media:content url="https://zz1gg.github.io/images/posts/AI/prompt-injection-game-writeup/10.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>AI</category>
+            
+          
+            
+              <category>Prompt</category>
+            
+          
+            
+              <category>LLM</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>Injection</category>
+            
+          
+        
+        
+          
+            
+              <category>AI</category>
+            
+          
+        
+        
+          
+            
+              <category>AI</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

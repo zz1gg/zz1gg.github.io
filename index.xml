@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>©2024, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 17 May 2024 23:59:06 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2024 14:00:06 +0900</lastBuildDate>
     
         <atom:link href="https://zz1gg.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -32,6 +32,58 @@
         
       
 
+      
+      <item>
+        <title>Prompt Injection CTF Game writeup</title>
+        <link>https://zz1gg.github.io/posts/prompt-injection-game-writeup/</link>
+        <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
+        
+        <atom:modified>Sat, 13 Jul 2024 14:00:06 +0900</atom:modified>
+        <guid>https://zz1gg.github.io/posts/prompt-injection-game-writeup/</guid>
+        <description>&lt;p&gt;Some AI Prompt Injection CTF Game writeup, like Gandalf, Immersive Labs, doublespeak&amp;hellip;&lt;/p&gt;</description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        <media:content url="https://zz1gg.github.io/images/posts/AI/prompt-injection-game-writeup/10.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>AI</category>
+            
+          
+            
+              <category>Prompt</category>
+            
+          
+            
+              <category>LLM</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>Injection</category>
+            
+          
+        
+        
+          
+            
+              <category>AI</category>
+            
+          
+        
+        
+          
+            
+              <category>AI</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>滥用Beep函数规避检测</title>
@@ -122,6 +174,10 @@
           
             
               <category>windbg</category>
+            
+          
+            
+              <category>Injection</category>
             
           
         

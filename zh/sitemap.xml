@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zz1gg.github.io/showcase/sec/threatcheckerrs/</loc>
+    <lastmod>2024-07-07T12:00:06+09:00</lastmod>
+  </url><url>
     <loc>https://zz1gg.github.io/showcase/sec/aab2apk/</loc>
     <lastmod>2021-07-20T12:00:06+09:00</lastmod>
   </url><url>
@@ -18,7 +21,7 @@
     <lastmod>2020-01-02T20:10:40+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -30,14 +33,17 @@
                 href="https://zz1gg.github.io/"
                 />
   </url><url>
-    <loc>https://zz1gg.github.io/tags/anti-sandbox/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <loc>https://zz1gg.github.io/tags/ai/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
-    <loc>https://zz1gg.github.io/tags/beep/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <loc>https://zz1gg.github.io/series/ai/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/categories/ai/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/categories/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -49,23 +55,29 @@
                 href="https://zz1gg.github.io/categories/"
                 />
   </url><url>
-    <loc>https://zz1gg.github.io/tags/frida/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
-  </url><url>
-    <loc>https://zz1gg.github.io/tags/golang/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
-  </url><url>
-    <loc>https://zz1gg.github.io/tags/hook/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <loc>https://zz1gg.github.io/tags/ctf/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/tags/index/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/injection/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/llm/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/posts/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/prompt/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/posts/prompt-injection-game-writeup/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/series/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -78,7 +90,7 @@
                 />
   </url><url>
     <loc>https://zz1gg.github.io/tags/</loc>
-    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -89,6 +101,21 @@
                 hreflang="zh"
                 href="https://zz1gg.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/anti-sandbox/</loc>
+    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/beep/</loc>
+    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/frida/</loc>
+    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/golang/</loc>
+    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/hook/</loc>
+    <lastmod>2024-05-17T23:59:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/series/winapi/</loc>
     <lastmod>2024-05-17T23:59:06+09:00</lastmod>

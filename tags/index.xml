@@ -12,11 +12,119 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>©2024, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 17 May 2024 23:59:06 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2024 14:00:06 +0900</lastBuildDate>
     
         <atom:link href="https://zz1gg.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>AI</title>
+        <link>https://zz1gg.github.io/tags/ai/</link>
+        <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/ai/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>CTF</title>
+        <link>https://zz1gg.github.io/tags/ctf/</link>
+        <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/ctf/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Index</title>
+        <link>https://zz1gg.github.io/tags/index/</link>
+        <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/index/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Injection</title>
+        <link>https://zz1gg.github.io/tags/injection/</link>
+        <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/injection/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>LLM</title>
+        <link>https://zz1gg.github.io/tags/llm/</link>
+        <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/llm/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Prompt</title>
+        <link>https://zz1gg.github.io/tags/prompt/</link>
+        <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
+        
+        
+        <guid>https://zz1gg.github.io/tags/prompt/</guid>
+        <description></description>
+        
+        <dc:creator>zz1gg</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>Anti-Sandbox</title>
@@ -97,24 +205,6 @@
         
         
         <guid>https://zz1gg.github.io/tags/hook/</guid>
-        <description></description>
-        
-        <dc:creator>zz1gg</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>Index</title>
-        <link>https://zz1gg.github.io/tags/index/</link>
-        <pubDate>Fri, 17 May 2024 23:59:06 +0900</pubDate>
-        
-        
-        <guid>https://zz1gg.github.io/tags/index/</guid>
         <description></description>
         
         <dc:creator>zz1gg</dc:creator>

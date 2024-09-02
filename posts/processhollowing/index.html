@@ -651,7 +651,7 @@
 
   
     
-    var baseurl = JSON.parse("\"https://zz1gg.github.io/\"");
+    var baseurl = JSON.parse("\"https://zz1gg.github.io\"");
     
     var permalink = JSON.parse("\"https://zz1gg.github.io/posts/processhollowing/\"");
     
@@ -1359,7 +1359,7 @@
     <meta property="twitter:description" content="">
   
 
-<meta name="generator" content="Hugo 0.124.1">
+<meta name="generator" content="Hugo 0.116.0">
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1407,12 +1407,12 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://zz1gg.github.io/"
+      "@id": "https://zz1gg.github.io"
     },
     "publisher": {
       "@type": "Organization",
       "name": "zz1gg's Blog",
-      "url": "https://zz1gg.github.io/"
+      "url": "https://zz1gg.github.io"
     }
   }
 </script>
@@ -1742,11 +1742,11 @@
 
   <li><a href="https://zz1gg.github.io/tags/processhollowing/" class="single__tag" title="ProcessHollowing">#ProcessHollowing</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/shellcode/" class="single__tag" title="Shellcode">#Shellcode</a></li>
+  <li><a href="https://zz1gg.github.io/tags/shellcode/" class="single__tag" title="shellcode">#shellcode</a></li>
 
   <li><a href="https://zz1gg.github.io/tags/golang/" class="single__tag" title="Golang">#Golang</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/windbg/" class="single__tag" title="Windbg">#Windbg</a></li>
+  <li><a href="https://zz1gg.github.io/tags/windbg/" class="single__tag" title="windbg">#windbg</a></li>
 
   <li><a href="https://zz1gg.github.io/tags/injection/" class="single__tag" title="Injection">#Injection</a></li>
 
@@ -1765,15 +1765,19 @@
   <div class="expand__content expand__content--toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#process-hollowing">Process Hollowing</a>
+    <li>
       <ul>
-        <li><a href="#poc的实现与调试分析">POC的实现与调试分析</a></li>
-        <li><a href="#poc">POC</a></li>
+        <li><a href="#process-hollowing">Process Hollowing</a>
+          <ul>
+            <li><a href="#poc的实现与调试分析">POC的实现与调试分析</a></li>
+            <li><a href="#poc">POC</a></li>
+          </ul>
+        </li>
+        <li><a href="#防御与检测">防御与检测</a></li>
+        <li><a href="#总结">总结</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
-    <li><a href="#防御与检测">防御与检测</a></li>
-    <li><a href="#总结">总结</a></li>
-    <li><a href="#references">References</a></li>
   </ul>
 </nav>
   </div>
@@ -1827,7 +1831,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用<code>Process Explorer</code>调试该进程，可发现进程ID和线程ID符合打印的日志：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/suspsend_debug_process.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/suspsend_debug_process.png" alt="" /></p>
 <p>调用<code>ntQueryInformationProcess</code>函数将<code>ProcessBasicInformation</code>传递给<code>ProcessInformationClass</code>，从而获得指向<code>Process Environment Block(PEB)</code>结构体的指针</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1863,10 +1867,10 @@
 </div>
 </div><p><code>Process Environment Block(PEB)</code> 是Windows NT操作系统内部使用的数据结构，由内核创建，用以存储每个进程的运行时数据。PEB里包含了很多攻击者感兴趣的字段，比如ImageBaseAdress、加载的DLL列表。如果要查看其详细情况，可以使用windbg调试。</p>
 <p>附加到挂起的进程<code>svchost.exe</code>(进程ID为<code>8852</code>)，此时使用<code>.reload</code>命令加载符号文件。使用<code>dt _PEB</code>或<code>dt ntdll!_PEB</code>查看PEB数据结构：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/PEB_Data_Structures.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/PEB_Data_Structures.png" alt="" /></p>
 <p>由此看出PEB包含<code>ImageBaseAddress</code>，且<code>ImageBaseAddress</code>在PEB地址的<code>10</code>字节处。所以可以通过<code>PebBaseAddress + 0x10</code>访问到<code>ImageBaseAddress</code>。</p>
 <p>在windbg中使用<code>!peb</code>命令查看到<code>ImageBaseAddress</code>的地址是<code>00007ff7ed410000</code>：</p>
-<p><img alt="ImageBaseAddress" src="/images/posts/Process_Hollowing/processhollowing_shellcode/peb_ImageBaseAddress.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/peb_ImageBaseAddress.png" alt="ImageBaseAddress" /></p>
 <p>在POC代码的实现中可以使用<code>ntReadVirtualMemory()</code>函数读取<code>PebBaseAddress+0x10</code>地址，从而获得<code>ImageBaseAddress</code>。而<code>ntReadVirtualProc</code>源自于<code>ntdll.NewProc(&quot;NtReadVirtualMemory&quot;)</code>的导出：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1908,13 +1912,13 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/ReadProcessMemory_read_PebBaseAddress_add_0x10.png"></p>
+</div><p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/ReadProcessMemory_read_PebBaseAddress_add_0x10.png" alt="" /></p>
 <p>得到了<code>ImageBaseAddress</code>的地址，即可以找到<code>IMAGE_DOS_HEADER</code>。在windbg中键入<code>dt _IMAGE_DOS_HEADER 00007ff7ed410000</code>查看<code>IMAGE_DOS_HEADER</code>的结构体内容：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/dt_Image_DOS_Header.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/dt_Image_DOS_Header.png" alt="" /></p>
 <p>将<code>e_lfanew</code>的值<code>0n240</code>转换为十六进制<code>0xf0</code>：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Image_DOS_Header_e_lfanew.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Image_DOS_Header_e_lfanew.png" alt="" /></p>
 <p>通过<code>e_lfanew</code>可以定位NT头，即<code>00007ff7ed410000 + 0xf0</code>为NT头的地址。在windbg中键入<code>dt _IMAGE_NT_HEADERS64 00007ff7ed410000+0xf0</code>：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Image_NT_Headers64.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Image_NT_Headers64.png" alt="" /></p>
 <p>此时，<code>IMAGE_OPTIONAL_HEADER64</code>的地址为<code>IMAGE_NT_HEADERS64 + OptionalHeader</code>，即为<code>ImageBaseAddress + e_lfanew + OptionalHeader</code> 。在内存中，PE文件的可选头中包含<code>AdressOfEntryPoint</code>的相对虚拟地址(<code>RVA</code>)，通过<code>ImageBaseAddress + e_lfanew + OptionalHeader</code>可定位到<code>IMAGE_OPTIONAL_HEADER64</code>的地址为<code>00007ff7ed410000 + 0xf0 + 0x018</code>处。</p>
 <blockquote>
 <p>PE文件的PE签名是<code>0x4500</code>（4个字节），COFF文件头为20个字节，即可选头在<code>NT头地址+24字节(0x18)</code>处</p>
@@ -1923,9 +1927,9 @@
 <p>PE32文件的可选头大小为<code>224</code>字节(<code>0xE0</code>)，PE32+文件的可选头大小为<code>240</code>字节(<code>0xF0</code>)</p>
 </blockquote>
 <p>在windbg中，使用<code>dt _IMAGE_OPTIONAL_HEADER64 00007ff7ed410000+0xf0+0x018</code>命令可定位到<code>AddressOfEntryPoint </code>的值为<code>0x5190</code>：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Image_Optional_Header64_AddressOfEntryPoint.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Image_Optional_Header64_AddressOfEntryPoint.png" alt="" /></p>
 <p>使用上述方法得到了目标进程的<code>ImageBaseAddress</code>和<code>AddressOfEntryPoint</code>，进而求得<code>Entry Point</code>的值为<code>ImageBaseAddress + AddressOfEntryPoint</code>，值<code>0x7ff7ed415190</code>：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/EntryPoint.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/EntryPoint.png" alt="" /></p>
 <p>获取到<code>EntryPoint</code>，在POC代码注入shellcode后，就可以将程序的执行流程转移到Shellcode所在的内存地址，实现对目标进程的控制。</p>
 <p>接下来，可以通过<code>NtProtectVirtualMemory</code>函数修改目标进程的内存页保护属性，设置为<code>PAGE_READWRITE</code>，以便可以写入Shellcode。</p>
 <div class="highlight"><div class="chroma">
@@ -2027,7 +2031,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">status</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nf">NtProtectVirtualMemory</span><span class="p">(</span><span class="nx">pi</span><span class="p">.</span><span class="nx">Process</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">base_address</span><span class="p">,</span> <span class="nb">uintptr</span><span class="p">(</span><span class="nx">shellcode_buffer_length</span><span class="p">),</span> <span class="nx">oldProtect</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">temp</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Restore_memory_protection.png"></p>
+</div><p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Restore_memory_protection.png" alt="" /></p>
 <p>最后使用<code>resumeThread()</code>函数恢复目标进程(<code>svchost.exe</code>)的执行，顺利完成程序执行的“偷梁换柱”。<code>resumeThread()</code>函数的自定义如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2058,7 +2062,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>shellcode成功在目标进程中执行，执行后弹出对话框：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/msgbox_hello.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/msgbox_hello.png" alt="" /></p>
 <p>上述内容实现了在 Windows 平台上使用 Process Hollowing 技术注入 Shellcode 到指定进程的内存空间中，并在目标进程的入口点处执行该 Shellcode。下面是代码的主要步骤和原理：</p>
 <ol>
 <li>创建目标进程：使用 <code>CreateProcessA</code> 函数创建目标进程，并将其挂起，以便后续操作。</li>
@@ -2175,16 +2179,16 @@
 </li>
 </ul>
 <p>而在实际的检测和响应，常常采取筛选威胁告警，溯源与安全产品检测相结合的方式，以便更有效地发现和应对恶意攻击。而这个过程往往会遇到的资源有限的问题，在大多数环境中，Process Hollowing的检测有很多的干扰和“噪音”，要想高效检测出目标攻击，且避免“告警疲劳”，可以参考<a href="https://posts.specterops.io/capability-abstraction-fbeaeeb26384">《Capability Abstraction》</a> 的漏斗模型将Process Hollowing能力抽象化，实现更好的检测点或溯源点，极大减少误报的干扰，提高检测/溯源精确度。</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/specterops_Funnel_Model.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/specterops_Funnel_Model.png" alt="" /></p>
 <p>比如，在本样例的能力抽象化中，可使用Process Explorer工具查看样例程序的进程树，依次分析父子进程的可疑性：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/poc_exe_process_chains.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/poc_exe_process_chains.png" alt="" /></p>
 <blockquote>
 <p>若环境中有crowdstrike等安全产品，也可以使用安全产品的威胁狩猎功能查看进程链，追溯进程链上进程的可疑程度，如父子进程的签名、哈希值、网络流量、注册表行为等动静态特征，将相关点提取出来，称为抽象图的一个元素。</p>
 </blockquote>
 <p>本样例的Windows API 函数定位检测可使用<a href="http://www.rohitab.com/apimonitor#Download">API Monitor</a>进行定位，然后针对定位到函数进行Hook或日志追溯：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/poc_exe_APIMonitor.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/poc_exe_APIMonitor.png" alt="" /></p>
 <p>本文样例程序可以提取出以下特征点形成以下抽象图：</p>
-<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Process_Hollowing_abstraction_map.png"></p>
+<p><img src="/images/posts/Process_Hollowing/processhollowing_shellcode/Process_Hollowing_abstraction_map.png" alt="" /></p>
 <p>通过将攻击的抽象化，可让安全人员的工作重心放在关键和高风险的检测/溯源点，从而实现更加高效的检测/溯源。这种模型化的方法能够最大程度地发挥安全运营人员的智慧和安全产品的优势，更好地实现高效检测，排除更多的“告警噪音”。</p>
 <h2 id="总结">总结</h2>
 <p>攻防博弈一直都在进行，进程注入技术已经出现很久，也出现了很多不同的实现方式，不同的攻击需要特定分析，制定对应的检测、防御措施。虽然本文只使用了一个进程注入的攻击样例进行叙述，但“万变不离其宗，万法归宗，一通百通”，其它的攻击与检测也可以此作为参照，凭借对细节、知识的关注，抽象化出对应的检测模型，减少大量“误报噪音”，有效保护目标环境。</p>
@@ -3583,15 +3587,19 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="toc toc__outer " data-dir="ltr" data-folding="true" data-ani="true">
           <nav id="TableOfContents">
   <ul>
-    <li><a href="#process-hollowing">Process Hollowing</a>
+    <li>
       <ul>
-        <li><a href="#poc的实现与调试分析">POC的实现与调试分析</a></li>
-        <li><a href="#poc">POC</a></li>
+        <li><a href="#process-hollowing">Process Hollowing</a>
+          <ul>
+            <li><a href="#poc的实现与调试分析">POC的实现与调试分析</a></li>
+            <li><a href="#poc">POC</a></li>
+          </ul>
+        </li>
+        <li><a href="#防御与检测">防御与检测</a></li>
+        <li><a href="#总结">总结</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
-    <li><a href="#防御与检测">防御与检测</a></li>
-    <li><a href="#总结">总结</a></li>
-    <li><a href="#references">References</a></li>
   </ul>
 </nav>
         </div>

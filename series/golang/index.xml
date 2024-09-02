@@ -28,7 +28,7 @@
         <description>&lt;p&gt;关于目标进程调试与分析、Shellcode注入到目标进程的 Process Hollowing的实现思路，以及Process Hollowing（Shellcode）攻击延展的攻击检测防御思路。&lt;/p&gt;</description>
         
         <dc:creator>zz1gg</dc:creator>
-        <media:content url="https://zz1gg.github.io/images/posts/Process_Hollowing/processhollowing_shellcode/Process_Injection.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://zz1gg.github.ioimages/posts/Process_Hollowing/processhollowing_shellcode/Process_Injection.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -88,7 +88,7 @@
         <description>&lt;p&gt;本文主要整理、记录了笔者在Golang的学习、使用过程中碰到的一些有意思的方面，内容包括但不限于编译生成、程序的元数据、代码函数、汇编、堆栈、安全。&lt;/p&gt;</description>
         
         <dc:creator>zz1gg</dc:creator>
-        <media:content url="https://zz1gg.github.io/images/posts/talk_about_golang/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://zz1gg.github.ioimages/posts/talk_about_golang/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

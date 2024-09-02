@@ -651,7 +651,7 @@
 
   
     
-    var baseurl = JSON.parse("\"https://zz1gg.github.io/\"");
+    var baseurl = JSON.parse("\"https://zz1gg.github.io\"");
     
     var permalink = JSON.parse("\"https://zz1gg.github.io/posts/talk-about-golang-informally/\"");
     
@@ -1359,7 +1359,7 @@
     <meta property="twitter:description" content="">
   
 
-<meta name="generator" content="Hugo 0.124.1">
+<meta name="generator" content="Hugo 0.116.0">
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1407,12 +1407,12 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://zz1gg.github.io/"
+      "@id": "https://zz1gg.github.io"
     },
     "publisher": {
       "@type": "Organization",
       "name": "zz1gg's Blog",
-      "url": "https://zz1gg.github.io/"
+      "url": "https://zz1gg.github.io"
     }
   }
 </script>
@@ -1740,13 +1740,13 @@
 
   <li><a href="https://zz1gg.github.io/tags/golang/" class="single__tag" title="Golang">#Golang</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/go/" class="single__tag" title="Go">#Go</a></li>
+  <li><a href="https://zz1gg.github.io/tags/go/" class="single__tag" title="go">#go</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/sec/" class="single__tag" title="Sec">#Sec</a></li>
+  <li><a href="https://zz1gg.github.io/tags/sec/" class="single__tag" title="sec">#sec</a></li>
 
   <li><a href="https://zz1gg.github.io/tags/ida/" class="single__tag" title="IDA">#IDA</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/reverse/" class="single__tag" title="Reverse">#Reverse</a></li>
+  <li><a href="https://zz1gg.github.io/tags/reverse/" class="single__tag" title="reverse">#reverse</a></li>
 
 </ul>
 
@@ -1763,65 +1763,69 @@
   <div class="expand__content expand__content--toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
-    <li><a href="#golang文件">Golang文件</a>
+    <li>
       <ul>
-        <li><a href="#文件大小">文件大小</a></li>
-        <li><a href="#元数据">元数据</a>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#golang文件">Golang文件</a>
           <ul>
-            <li><a href="#build-id">Build ID</a></li>
-            <li><a href="#版本号">版本号</a></li>
-            <li><a href="#路径信息">路径信息</a></li>
+            <li><a href="#文件大小">文件大小</a></li>
+            <li><a href="#元数据">元数据</a>
+              <ul>
+                <li><a href="#build-id">Build ID</a></li>
+                <li><a href="#版本号">版本号</a></li>
+                <li><a href="#路径信息">路径信息</a></li>
+              </ul>
+            </li>
+            <li><a href="#pcheader结构体">pcHeader结构体</a>
+              <ul>
+                <li><a href="#幻数">幻数</a></li>
+              </ul>
+            </li>
+            <li><a href="#样例分析1分析poc程序">样例分析1——分析POC程序</a>
+              <ul>
+                <li><a href="#实验准备">实验准备</a></li>
+                <li><a href="#定位函数">定位函数</a></li>
+                <li><a href="#goroot">GOROOT</a></li>
+                <li><a href="#垃圾回收">垃圾回收</a></li>
+                <li><a href="#主函数">主函数</a></li>
+                <li><a href="#conference函数">Conference函数</a></li>
+                <li><a href="#download_exec函数">download_exec函数</a></li>
+              </ul>
+            </li>
+            <li><a href="#样例分析2静态分析trojan">样例分析2——静态分析Trojan</a></li>
+            <li><a href="#样例分析3动态分析miner">样例分析3——动态分析Miner</a></li>
           </ul>
         </li>
-        <li><a href="#pcheader结构体">pcHeader结构体</a>
+        <li><a href="#汇编">汇编</a>
           <ul>
-            <li><a href="#幻数">幻数</a></li>
+            <li><a href="#打印汇编代码">打印汇编代码</a></li>
+            <li><a href="#优化">优化</a></li>
           </ul>
         </li>
-        <li><a href="#样例分析1分析poc程序">样例分析1——分析POC程序</a>
+        <li><a href="#函数">函数</a>
           <ul>
-            <li><a href="#实验准备">实验准备</a></li>
-            <li><a href="#定位函数">定位函数</a></li>
-            <li><a href="#goroot">GOROOT</a></li>
-            <li><a href="#垃圾回收">垃圾回收</a></li>
-            <li><a href="#主函数">主函数</a></li>
-            <li><a href="#conference函数">Conference函数</a></li>
-            <li><a href="#download_exec函数">download_exec函数</a></li>
+            <li><a href="#调用栈">调用栈</a></li>
+            <li><a href="#调用约定">调用约定</a>
+              <ul>
+                <li><a href="#参数和返回值">参数和返回值</a></li>
+                <li><a href="#寄存器传值">寄存器传值</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#样例分析2静态分析trojan">样例分析2——静态分析Trojan</a></li>
-        <li><a href="#样例分析3动态分析miner">样例分析3——动态分析Miner</a></li>
-      </ul>
-    </li>
-    <li><a href="#汇编">汇编</a>
-      <ul>
-        <li><a href="#打印汇编代码">打印汇编代码</a></li>
-        <li><a href="#优化">优化</a></li>
-      </ul>
-    </li>
-    <li><a href="#函数">函数</a>
-      <ul>
-        <li><a href="#调用栈">调用栈</a></li>
-        <li><a href="#调用约定">调用约定</a>
+        <li><a href="#安全">安全</a>
           <ul>
-            <li><a href="#参数和返回值">参数和返回值</a></li>
-            <li><a href="#寄存器传值">寄存器传值</a></li>
+            <li><a href="#ssti">SSTI</a></li>
           </ul>
         </li>
+        <li><a href="#其它">其它</a>
+          <ul>
+            <li><a href="#503-service-unavailable">503 Service Unavailable</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
-    <li><a href="#安全">安全</a>
-      <ul>
-        <li><a href="#ssti">SSTI</a></li>
-      </ul>
-    </li>
-    <li><a href="#其它">其它</a>
-      <ul>
-        <li><a href="#503-service-unavailable">503 Service Unavailable</a></li>
-      </ul>
-    </li>
-    <li><a href="#references">References</a></li>
   </ul>
 </nav>
   </div>
@@ -1865,25 +1869,25 @@
 <li>链接器（Linker）：链接器将生成的机器代码组合成单个可执行文件</li>
 <li>执行（Execution）：在目标机器上按照Go源码的原始逻辑进行运行</li>
 </ul>
-<p><img src="/images/posts/talk_about_golang/go_file_to_exe.png"></p>
+<p><img src="/images/posts/talk_about_golang/go_file_to_exe.png" alt="" /></p>
 <h3 id="文件大小">文件大小</h3>
 <p>下图中，比较了Linux amd64平台<br />
 下的C二进制程序和Go二进制程序的文件大小，C二进制文件大小远远小于Go编译生成的：</p>
-<p><img alt="C和Go二进制文件大小比对" src="/images/posts/talk_about_golang/go_binary_size.png"></p>
+<p><img src="/images/posts/talk_about_golang/go_binary_size.png" alt="C和Go二进制文件大小比对" /></p>
 <p>这是什么原因造成的呢？</p>
 <p><strong>原因一</strong>：此处C含动态节区，使用了动态链接库；Go使用的是静态编译，不含动态节区。</p>
-<p><img alt="C和Go的debug信息" src="/images/posts/talk_about_golang/dynamic_lib.png"></p>
+<p><img src="/images/posts/talk_about_golang/dynamic_lib.png" alt="C和Go的debug信息" /></p>
 <blockquote>
 <p>在<code>go build</code>或<code>go install</code>命令加上<code>-buildmode</code>参数，可以实现动态链接</p>
 </blockquote>
 <p><strong>原因二</strong>：Go编译时，编译器将很多debug信息编译进去。</p>
-<p><img alt="C和Go二进制文件大小比对" src="/images/posts/talk_about_golang/debuginfo.png"></p>
+<p><img src="/images/posts/talk_about_golang/debuginfo.png" alt="C和Go二进制文件大小比对" /></p>
 <p><strong>原因三</strong>：Go代码中引入了<code>fmt</code>包，间接引入了很多其他的包。</p>
-<p><img alt="C和Go二进制文件大小比对" src="/images/posts/talk_about_golang/IDA_fmt_fun_imports.png"></p>
+<p><img src="/images/posts/talk_about_golang/IDA_fmt_fun_imports.png" alt="C和Go二进制文件大小比对" /></p>
 <p>使用runtime打印函数的话，和C编译的二进制文件大小差距就很小：</p>
-<p><img alt="C和Go二进制文件大小比对" src="/images/posts/talk_about_golang/go_no_fmt_striped_size.png"></p>
+<p><img src="/images/posts/talk_about_golang/go_no_fmt_striped_size.png" alt="C和Go二进制文件大小比对" /></p>
 <p>此处也可以使用IDA比对前后两次样例，会发现数量函数有明显变化：</p>
-<p><img alt="C和Go二进制文件大小比对" src="/images/posts/talk_about_golang/IDA_compare_fmt_nofmt.png"></p>
+<p><img src="/images/posts/talk_about_golang/IDA_compare_fmt_nofmt.png" alt="C和Go二进制文件大小比对" /></p>
 <blockquote>
 <p>文件大小的章节详见 <a href="https://www.cnxct.com/why-golang-elf-binary-file-is-large-than-c/">golang语言编译的二进制可执行文件为什么比 C 语言大</a> （https://www.cnxct.com/why-golang-elf-binary-file-is-large-than-c/），该文作者详细地分析了Go编写的二进制可执行文件大于C的原因。</p>
 </blockquote>
@@ -1912,7 +1916,7 @@
 </span></span><span class="line"><span class="cl">strings -af hello_Go <span class="p">|</span> grep -E <span class="s2">&#34;((\&#34;?)([a-zA-Z0-9_-]{20})\/)(([a-zA-Z0-9_-]{20})\/([a-zA-Z0-9_-]){20}\/([a-zA-Z0-9_-]){20}(\&#34;?)</span>$<span class="s2">)&#34;</span> 
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img alt="Go Build ID图" src="/images/posts/talk_about_golang/gobuildid.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/gobuildid.png" alt="Go Build ID图" /></p>
 <p>也可以使用YARA规则进行识别，YARA规则可见 <a href="https://github.com/SentineLabs/AlphaGolang">https://github.com/SentineLabs/AlphaGolang</a> ：</p>
 <pre tabindex="0"><code>rule TTP_GoBuildID
 {
@@ -1937,14 +1941,14 @@
         and
         #GoBuildId == 1
 }
-</code></pre><p><img alt="Go Build ID图" src="/images/posts/talk_about_golang/gobuildid_yara.png"></p>
+</code></pre><p><img src="/images/posts/talk_about_golang/gobuildid_yara.png" alt="Go Build ID图" /></p>
 <h4 id="版本号">版本号</h4>
 <p>不同Go版本，具有不同的特性，特别是在一些版本底层改变较大，编写、编译生成的二进制程序有一定的差异性。对于手动分析来说，知道Go二进制程序是用哪个Go版本编译是很重要的。一般来说，查看Go二进制程序是哪个Go版本，可使用以下两种方法：</p>
 <ol>
 <li><code>go version [go binary]</code></li>
 <li>查看二进制程序的字符串可找到</li>
 </ol>
-<p><img alt="版本号" src="/images/posts/talk_about_golang/goversion.png"></p>
+<p><img src="/images/posts/talk_about_golang/goversion.png" alt="版本号" /></p>
 <p>但如果Go的二进制程序被处理过，可能就无法使用内置的工具<code>go version</code>查看，如加壳。</p>
 <h4 id="路径信息">路径信息</h4>
 <p><strong>GOROOT</strong> 是 Go 语言编译、工具、标准库等的安装路径。一般地，在编译的的时候，都会把 <strong>GOROOT</strong> 打包进去，并用于<code>runtime.GOROOT()</code> 函数。为了优化编译时的二进制，可以在编译的时候，使用如下命令去除路径信息：</p>
@@ -1957,7 +1961,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用IDA可清晰看到去除路径信息的Golang二进制文件和未去除路径信息的二进制文件区别：</p>
-<p><img alt="去除路径信息对比图" src="/images/posts/talk_about_golang/%E5%8E%BB%E9%99%A4%E7%AC%A6%E5%8F%B7%E8%B7%AF%E5%BE%84.png"></p>
+<p><img src="/images/posts/talk_about_golang/%E5%8E%BB%E9%99%A4%E7%AC%A6%E5%8F%B7%E8%B7%AF%E5%BE%84.png" alt="去除路径信息对比图" /></p>
 <p>在不同的系统架构下，可根据实际需要生成去除路径等信息的Golan编译程序：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1989,7 +1993,7 @@
 <p>pcHeader结构体 是 <code>pclntab</code> 的头。</p>
 <p>根据 <a href="https://docs.google.com/document/d/1lyPIbmsYbXnpNj57a261hgOYVpNRcgydurVQIyZOz_o/pub">https://docs.google.com/document/d/1lyPIbmsYbXnpNj57a261hgOYVpNRcgydurVQIyZOz_o/pub</a> 描述可知，函数符号表、文件名表、函数结构体以及这些数据的偏移量引用的数据在内存中都是连续的，记录在<code>pclntab</code>( <code>Program Counter Line Table</code>，程序计数器行数映射表，也叫称为 <code>Runtime Symbol Table</code>) 上。该表将虚拟内存地址映射回最近的符号名称，用于生成带有函数和文件名的堆栈跟踪。所以在Golang程序的逆向工程中，<code>pclntab</code>对于恢复符号来说是很重要的一个切入点。</p>
 <p><a href="https://github.com/golang/go/blob/master/src/runtime/symtab.go">官方的代码库</a>中<code>src/runtime/symtab.go</code>对<code>pcHeader</code>结构体的定义如下：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_Structure.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_Structure.png" alt="" /></p>
 <p><code>pcHeader</code>结构体的中文注释如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2036,9 +2040,9 @@
 <li><code>nfunc</code>：模块中的函数数量</li>
 </ul>
 <p>定位 <code>pclntab</code> 的方法：遍历查找<code>magic</code>值，从而确定<code>pclntab</code>的地址。然后遍历<code>funcs</code>表，得到<code>func_struct</code>，通过<code>func_struct</code>的<code>name_offset</code>字段获取函数名称，进而重命名函数。</p>
-<p><img src="/images/posts/talk_about_golang/pclntab.png"></p>
+<p><img src="/images/posts/talk_about_golang/pclntab.png" alt="" /></p>
 <p>使用IDA自带的解析功能，可以清楚看到pclntab 头的排列情况：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_in_IDA.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_in_IDA.png" alt="" /></p>
 <p>IDA7.6版本开始大大加强对Golang的解析度，此版本之前的需要借助第三方脚本或者手动解析的方法进行分析。</p>
 <ul>
 <li><a href="https://github.com/goretk/gore/">https://github.com/goretk/gore/</a></li>
@@ -2245,16 +2249,16 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>go build example1.go</code>命令编译程序，并查看编译后程序的版本信息和buildid：</p>
-<p><img alt="example1.exe_info" src="/images/posts/talk_about_golang/pcHeader_example_example1_exe_info.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example1_exe_info.png" alt="example1.exe_info" /></p>
 <p>在cmd中运行程序，在浏览器访问http://127.0.0.1:9999/submit?user=alexandre则正常打印字符串，在浏览器访问http://127.0.0.1:9999/submit?user=borges则会下载执行计算器程序，符合实验准备的预期：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_pop_calc.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_pop_calc.png" alt="" /></p>
 <h4 id="定位函数">定位函数</h4>
 <p>使用IDA打开该二进制程序，在HEX窗口查看example.exe文件，显示了该程序的buildID，程序的开头以FF 20开始:</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_IDA1.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_IDA1.png" alt="" /></p>
 <p>切换到IDA的汇编窗口查看：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_IDA2.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_IDA2.png" alt="" /></p>
 <p>此时使用快捷键<code>A</code>，更改数据类型为字符串：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_IDA3.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_IDA3.png" alt="" /></p>
 <blockquote>
 <p>当IDA标识错误时,可以使用<code>A\C\D\U</code>进行手动标注修改：</p>
 <ul>
@@ -2265,30 +2269,30 @@
 </ul>
 </blockquote>
 <p>根据前文获得的go版本信息，可以在IDA里直接二进制搜索go1.17.2搜索到：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_pcheader_magic_IDA1.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_pcheader_magic_IDA1.png" alt="" /></p>
 <p>在IDA搜索Go1.17的magic幻数<code>FFFFFFFA</code>，Search-&gt;Sequence of bytes（快捷键Alt+B）搜索二进制字符串<code>FFFFFFFA</code>，可得到：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_pcheader_magic.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_pcheader_magic.png" alt="" /></p>
 <p>双击跳转到<code>006FB2A0</code>地址处：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_006FB2A0.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_006FB2A0.png" alt="" /></p>
 <p>同样的，在Ghidra上搜索。Linux上的老版本1.16编译出来的二进制程序是有gopclntab节区，但是Windows 上的Go1.17版本的编译出来的没有gopclntab节区：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_ghidra1.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_ghidra1.png" alt="" /></p>
 <blockquote>
 <p>在构建可执行 ELF 文件时，目前还是默认使用 -buildmode=exe，而从 2019 年 4 月底 Go 语言官方 Change Log 203606 开始，在 Windows 上构建可执行 PE 文件时，则会默认使用 <code>-buildmode=pie</code>, 是没有 <code>.gopclntab</code> 这个 Section 的，而是多了一些重定向相关的 Section</p>
 </blockquote>
 <p>这时，可以在Ghidra也可以用memory(快捷键S)搜索<code>FFFFFFFA</code>,可以定位到该幻数：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_ghidra2.png"></p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_ghidra3.png"></p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_ghidra4.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_ghidra2.png" alt="" /></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_ghidra3.png" alt="" /></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_ghidra4.png" alt="" /></p>
 <p>计算buildid函数的地址，<code>pcheader+offset</code>为<code>6FB2A0+40=6FB2E0</code>：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_func_addr.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_func_addr.png" alt="" /></p>
 <p>函数表(func table)的起始地址为 (pclntab_addr + 8)，第一个元素( uintptr N) 代表函数的个数。函数名称表的起始地址为(pclntab_addr+8)，即 <code>6FB2D8+8=6FB2E0</code>：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_func_table.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_func_table.png" alt="" /></p>
 <p>在pcHeader中的pclntab地址处按快捷键D转换出pclntab的偏移值是<code>0BD2A0h</code>：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_plcntab_offset.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example_exe_plcntab_offset.png" alt="" /></p>
 <p><code>pcHeader + pclnOffset=Function Table</code>指向pclntab，也就是Go用来描述函数信息的地方 ， 计算地址<code>6FB2A0+0BD2A0=7B8540</code>:</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_7B8540.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_7B8540.png" alt="" /></p>
 <p>使用IDA的快捷键<code>G</code>跳转到<code>7B8540</code>处，该结构由<code>funcAddress + funcMetaAddress</code>两部分组成。</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_7B8540_2.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_7B8540_2.png" alt="" /></p>
 <p><code>pcHeader + pclnOffset + funcMetaAddress</code>指向Go的<code>_func</code>结构，具体见<code>symtab.go</code>和文件的<code>type pcHeader struct</code>。</p>
 <blockquote>
 <p>此<a href="https://golang.org/src/debug/gosym/symtab.go">src/debug/gosym/symtab.go</a>已经没有<code>type _func struct</code>可以在https://docs.google.com/document/d/1lyPIbmsYbXnpNj57a261hgOYVpNRcgydurVQIyZOz_o/pub 的文档中找到Go 1.2 运行时符号信息，并查看<br />
@@ -2366,23 +2370,23 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>描述函数信息的结构由<code>funcAddress + funcMetaAddress</code>两部分组成，则<code>funcMetaAddress</code>为<code>12598</code>，即是<code>Func Name String Offset</code> 为 <code>0x12598</code></p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_0x12598.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_0x12598.png" alt="" /></p>
 <p><code>pcHeader + pclnOffset + funcMetaAddress</code>指向Go的<code>_func</code>结构，即<code>6FB2A0+0BD2A0+12598=7CAAD8</code>，在<code>7CAAD8</code>处：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_0x7CAAD8.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_0x7CAAD8.png" alt="" /></p>
 <p>具体见symtab.go文件的<code>type pcHeader struct</code>。通过<code>_func</code>中的<code>entry</code>也就是<code>funcAddress</code>和<code>nameOff</code>就可以把函数地址和函数名结合起来</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_entry.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_entry.png" alt="" /></p>
 <p>此时<code>7CAAD8</code>的偏移值为<code>401000</code>,该函数的入口点就是<code>401000</code>:</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_0x401000.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_0x401000.png" alt="" /></p>
 <p>进入该函数内部：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_into_func.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_into_func.png" alt="" /></p>
 <h4 id="goroot">GOROOT</h4>
 <p>直接使用IDA快捷键<code>Alt+T</code>搜索<code>runtime_defaultGoROOT</code>得到<code>C:\\Program Files\\Go</code>：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_goroot.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_goroot.png" alt="" /></p>
 <h4 id="垃圾回收">垃圾回收</h4>
 <p>在Golang程序中，垃圾回收器会被调用很多次：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_gc1.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_gc1.png" alt="" /></p>
 <p>本实验目的不在于gc分析，就不对浪费垃圾回收相关操作进行其它篇幅叙述：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_gc2.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_gc2.png" alt="" /></p>
 <h4 id="主函数">主函数</h4>
 <p>回顾<code>main()</code>函数的源码：</p>
 <div class="highlight"><div class="chroma">
@@ -2435,9 +2439,9 @@
 </ul>
 </li>
 </ul>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example1_main.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example1_main.png" alt="" /></p>
 <p> 按<code>空格键</code>切换反汇编窗口，得到汇编视图:</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_example1_main_asm.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_example1_main_asm.png" alt="" /></p>
 <blockquote>
 <p><code>small allocations</code>是直接通过<code>mcache</code>来分配的。对于<code>tiny allocations</code>的分配，有一个微型分配器<code>tiny allocator</code>来分配，分配的对象都是不包含指针的，例如一些小的字符串和不包含指针的独立的逃逸变量等。<code>small allocations</code>的分配，就是<code>mcache</code>根据对象的大小来找自身存在的大小相匹配<code>mspan</code>来分配。<br />
 当<code>mcach</code>没有可用空间时，会从<code>mcentral</code>的 <code>mspans</code> 列表获取一个新的所需大小规格的<code>mspan</code>。</p>
@@ -2504,15 +2508,15 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>点击<code>61F11A</code>处的<code>off_6A16D8</code>跳转到，到达<code>61EC00</code>处：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference.png" alt="" /></p>
 <p>按IDA的快捷键<code>空格键</code>得到<code>Conference</code>函数图形视图：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference2.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference2.png" alt="" /></p>
 <p>根据指令流，对指令做一些分析：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference_instr.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference_instr.png" alt="" /></p>
 <blockquote>
 <p>将当前指令/数据的立即操作数类型转换为十六进制数：快捷键：<code>Q</code></p>
 </blockquote>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference_hex.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference_hex.png" alt="" /></p>
 <blockquote>
 <p>Go 语言中读取 <code>map</code> 有两种语法：带 <code>comma</code> 和 不带 <code>comma</code>。当要查询的 <code>key</code> 不在 <code>map</code> 里，带 <code>comma</code> 的用法会返回一个 <code>bool</code> 型变量提示 <code>key</code> 是否在 <code>map</code> 中；而不带 <code>comma</code> 的语句则会返回一个 <code>key</code> 类型的零值。如果 <code>key</code> 是 <code>int</code> 型就会返回 <code>0</code>，如果 <code>key</code> 是 <code>string</code> 类型，就会返回空字符串。https://www.bookstack.cn/read/qcrao-Go-Questions/map-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%A4%E7%A7%8D%20get%20%E6%93%8D%E4%BD%9C.md</p>
 </blockquote>
@@ -2527,7 +2531,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;The requester is: %s\n\n&#34;</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference_requester.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/pcHeader_example_Conference_requester.png" alt="" /></p>
 <p>在Go中，一个接口类型定义了一个方法集，接口会提供方法来指定对象的行为、类型,不过最终是由具体的对象来实现方法。这里就是使用string来实现类型转换：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2577,7 +2581,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </ul>
 </blockquote>
 <p>根据校验的结果进行操作，校验成功则下载所给地址的<code>calc2.exe</code>：</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_calc_exe.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_calc_exe.png" alt="" /></p>
 <h4 id="download_exec函数">download_exec函数</h4>
 <p>回顾<code>download_exec()</code>函数的源码：</p>
 <div class="highlight"><div class="chroma">
@@ -2663,7 +2667,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>从<code>Conference</code>函数中的<code>call    blackss_project1_Download_Exec</code>指令进入<code>download_exec</code>函数。</p>
-<p><img src="/images/posts/talk_about_golang/pcHeader_example_download_calc_exe.png"></p>
+<p><img src="/images/posts/talk_about_golang/pcHeader_example_download_calc_exe.png" alt="" /></p>
 <p>主函数中的<code>Create()</code>函数实际上是使用<code>OpenFile()</code>函数实现的，可在Go源码的<a href="https://go.dev/src/os/file.go">os.File</a> （https://go.dev/src/os/file.go） 包中查看到：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2677,7 +2681,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/pcHeader_example_Create_func.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/pcHeader_example_Create_func.png" alt="" /></p>
 <p>此时rbx拥有err变量，使用test指令判定是文件是否创建成功:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2730,7 +2734,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl">    <span class="nx">out</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/pcHeader_example_handle_http_request.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/pcHeader_example_handle_http_request.png" alt="" /></p>
 <p>接下来程序流，就是运行下载下来的文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2750,13 +2754,13 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/pcHeader_example_exec_payload.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/pcHeader_example_exec_payload.png" alt="" /></p>
 <p>至此，运用上文所描述的理论知识，大致将所准备的go源码编译的程序进行了静态分析。</p>
 <h3 id="样例分析2静态分析trojan">样例分析2——静态分析Trojan</h3>
 <p>运用上文所述的理论知识，针对实际的程序例子进行分析。使用的<br />
 样本文件SHA256 hash: 4961954c47ef2395dd73b8cc4bb36827f71e08a13f9ec4cc1daba51715334fc9</p>
 <p>使用 <a href="https://github.com/SentineLabs/AlphaGolang">https://github.com/SentineLabs/AlphaGolang</a> 中的YARA脚本识别Golang二进制的BuildID（<code>yara -s 0.identify_go_binaries.yara 4961954c47ef2395dd73b8cc4bb36827f71e08a13f9ec4cc1daba51715334fc9.exe</code>）：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_yara.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_yara.png" alt="" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2810,19 +2814,19 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用Cutter查看目标文件的文件信息：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_cutter.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_cutter.png" alt="" /></p>
 <p>使用IDA分析样本，进入<code>main_main</code> 函数：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_main.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_main.png" alt="" /></p>
 <p>在 Go 语言中，<code>ArbitraryUserPointer</code> 通常用于与 C 语言交互，如使用 cgo 时，允许将任意类型的指针（例如 C 语言中的 void*）传递给 Go 函数。</p>
 <p>选中<code>main_main</code>函数，点击<code>View -&gt; Open subviews -&gt; Function calls</code> ：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_call_func.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_call_func.png" alt="" /></p>
 <p>显示所有的函数调用：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_call_func2.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_call_func2.png" alt="" /></p>
 <p>在<code>main.main</code>函数中，使用<code>UserHomeDir()</code> 函数返回当前用户的主目录，在Windows系统中是使用<code>%USERPROFILE%</code>获取当前用户目录；<code>path.filepath.Join</code>函数将路径元素连接成一个单一的路径，在Windows上返回一个UNC路径；<code>os.MkdirAll()</code>创建一个命名路径和所有必要的父目录(类似于Linux/Unix上的<code>mkdir -p</code>)</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_path_func.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_path_func.png" alt="" /></p>
 <hr />
 <p>通常使用下图类似的代码结构创建字符串：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_string.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_IDA_string.png" alt="" /></p>
 <p>然后使用快捷键<code>Alt+Q</code>  和<code>T</code> 对一个结构体偏移量进行更改应用。（<code>Alt + Q </code>将某一组数据定义为某结构体）</p>
 <p>虽然该样例主要是说明静态分析，但是可以拓展一下，重命名的函数可以使用以下插件转移到x64dbg中：</p>
 <ul>
@@ -2857,14 +2861,14 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </div><p>启动了一个 goroutine 的时候，一定要知道，在 Go 编译器的作用下，这条语句最终会转化成 newproc 函数。</p>
 <p>因此，<code>newproc</code> 函数需要两个参数：一个是新创建的 goroutine 需要执行的任务，也就是<code> fn</code>，它代表一个函数<code> func</code>；还有一个是 <code>fn </code>的参数大小。</p>
 <p><code>runtime.main</code>函数没有参数，所以其构造 <code>newproc</code> 函数调用栈的时候，第一个参数是 0</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_newproc.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_newproc.png" alt="" /></p>
 <hr />
 <p>点击<code>00000000006D7645</code> 地址进入<code> main_lockRun</code> 函数：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_lockRun.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_lockRun.png" alt="" /></p>
 <p>点击<code>00000000006D764A</code> 进入<code> main.getClientDetails</code> 函数：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_getClientDetails.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_getClientDetails.png" alt="" /></p>
 <p>点击<code>00000000006D65301</code>地址处的<code>os_user_Current</code> 进入<code>os_user_Current</code> 函数：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_os_user_Current.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_os_user_Current.png" alt="" /></p>
 <blockquote>
 <p> <code>runtime.typedmemmove</code> 将发送的数据拷贝到缓冲区，类似于C中的<code>memcpy()</code></p>
 </blockquote>
@@ -2882,16 +2886,16 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </ul>
 </li>
 </ul>
-<p><img src="/images/posts/talk_about_golang/example_mal2_os_user_Current2.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_os_user_Current2.png" alt="" /></p>
 <p>在<code>os.user.Current</code>函数 <code>00000000006D59BC</code> 地址处的函数调用情况：</p>
 <ul>
 <li><code>syscall___ptr_SID__String</code>：syscall包的String可以使用<code>ConvertSidToStringSid( )</code>函数将sid转换为字符串</li>
 <li><code>syscall_Token_GetUserProfileDirectory</code>：这个函数通过给定的口令检索userprofile目录路径（返回指定用户的userprofile路径）</li>
 <li><code>os_user_lookupUsernameAndDomain</code>：检索给定SID的用户名和域</li>
 </ul>
-<p><img src="/images/posts/talk_about_golang/example_mal2_lookup.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_lookup.png" alt="" /></p>
 <p>在<code>main_getClientDetails</code> 的<code>00000000006D653F</code> 地址处调用了<code>os.hostname</code> ，进入<code>os.hostname</code> 函数：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_hostname.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_hostname.png" alt="" /></p>
 <p>make函数初始化有三个参数，第一个是类型，第二个长度，第三个容量，容量要大于等于长度。slice的make初始化调用的是底层的<code>runtime.makeslice</code>函数。</p>
 <p>切片是一种动态大小的数组(无固定的长度)，其典型的符号就是<code>[]T</code>，T指定元素的类型：</p>
 <div class="highlight"><div class="chroma">
@@ -2912,7 +2916,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>在<code>main_getClientDetails</code> 的<code>00000000006D6557</code> 地址处调用了<code>main.getIP</code> ，进入<code>main.getIP</code>函数：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_getIP.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_getIP.png" alt="" /></p>
 <blockquote>
 <p>不幸的是，在Golang的早期版本中查找字符串并不容易(它们被分组了)。然而，花些时间还是可以梳理出……为了确定字符串在哪里结束，我使用了以下几行</p>
 </blockquote>
@@ -2927,7 +2931,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>继续跟随<code>main.getIP</code>代码流到<code>00000000006D63D9</code>：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_getIP_2.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_getIP_2.png" alt="" /></p>
 <p>Go中的接口类型在某些方面类似于其他语言，定义了一些需要实现的方法。其他数据类型持有相同签名方法，将会被视为与该接口的相同类型。<code>方法签名</code>由<code>方法名</code>、<code>方法参数</code>、<code>返回值</code>三部分组成。</p>
 <p><code>ReadAll</code>对 r 进行读取， 直到发生错误或者遇到 EOF 为止， 然后返回被读取的数据。 一次成功的读取将返回 nil 而不是 EOF 作为 err 的值： 这是因为 ReadAll 的定义就是要读取 r 直到遇到 EOF 为止， 所以它不会把读取到的 EOF 当做错误， 也不会向调用者返回它：</p>
 <div class="highlight"><div class="chroma">
@@ -2939,7 +2943,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>双击IDA的函数栏中的<code>main_getClientDetails</code>，进入<code>00000000006D7A90</code> 地址处：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_getIP_main_getClientDetails_6D7A90.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_getIP_main_getClientDetails_6D7A90.png" alt="" /></p>
 <ol>
 <li>文件从互联网下载</li>
 <li><code>downloadFile()</code>是通过<code>net.http.Get()</code>函数：<code>func Get(url string) (resp *Response, err error)</code></li>
@@ -2948,13 +2952,13 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <li>Command函数为<code>func Command(name string, arg ...string) *Cmd</code> ，返回一个Cmd结构体，使用<code>os.exec.Cmd.Run()</code>执行目标程序的参数</li>
 </ol>
 <p>从main函数进入<code>main.handleFileUploadURL()</code> 函数，定位到该程序：使用post方法传输json文件到<code>hxxps://gi74qcmwmxoq4xun[.]onion[.]ws/fujson </code>，使用的登录口令为 用户名: <code>uwangle</code>密码为<code>vzigzag</code>。</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_getIP_main_handle_FileUploadURL.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_getIP_main_handle_FileUploadURL.png" alt="" /></p>
 <p>双击IDA的函数栏中的<code>main_handleScreenshot</code>，进入<code>00000000006D65F0</code> 地址处。经分析，得出该程序使用第三方扩展包（https://github.com/kbinani/screenshot ）进行桌面程序截图：</p>
-<p><img src="/images/posts/talk_about_golang/example_mal2_getIP_main_handle_Screenshot.png"></p>
+<p><img src="/images/posts/talk_about_golang/example_mal2_getIP_main_handle_Screenshot.png" alt="" /></p>
 <h3 id="样例分析3动态分析miner">样例分析3——动态分析Miner</h3>
 <p>运用上文所述的理论知识，针对实际的程序例子进行分析。选用样例的文件SHA-256 Hash为73dec430b98ade79485f76d405c7a9b325df7492b4f97985499a46701553e34a</p>
 <p>使用rabin2命令查看样本是否有壳：</p>
-<p><img src="/images/posts/talk_about_golang/example3_mal_DIE.png"></p>
+<p><img src="/images/posts/talk_about_golang/example3_mal_DIE.png" alt="" /></p>
 <blockquote>
 <p>环境中如果没有rabin2命令，可以安装radare2，如<code>sudo apt-get install radare2</code></p>
 </blockquote>
@@ -2967,7 +2971,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rabin2 -I 73dec430b98ade79485f76d405c7a9b325df7492b4f97985499a46701553e34a
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/example3_mal_rabin2.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/example3_mal_rabin2.png" alt="" /></p>
 <p>通过下列命令列出恶意程序调用的函数：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2984,7 +2988,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>该恶意程序是通过AES加密，且在内存中解密运行：</p>
-<p><img src="/images/posts/talk_about_golang/example3_mal_list_func.png"></p>
+<p><img src="/images/posts/talk_about_golang/example3_mal_list_func.png" alt="" /></p>
 <p>使用<code>strace</code> 命令捕捉和记录恶意程序的系统调用和被进程接收的信号：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2994,7 +2998,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">strace -s <span class="m">2048</span> ./73dec430b98ade79485f76d405c7a9b325df7492b4f97985499a46701553e34a
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/example3_mal_strace.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/example3_mal_strace.png" alt="" /></p>
 <p>运行目标程序，并在执行过程中，只跟踪文件描述符为 <code>3</code> 的 <code>write</code> 系统调用，并将输出详细写入到 test.txt 文件中。可以看到目标程序写入5957056字节的数据，从已有的标志上看似乎写入的是ELF文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3004,7 +3008,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">strace -e  <span class="nv">write</span><span class="o">=</span><span class="m">3</span> -o test.txt ./73dec430b98ade79485f76d405c7a9b325df74
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/example3_mal_strace2.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/example3_mal_strace2.png" alt="" /></p>
 <p>接下来，使用gdb调试恶意样本程序：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3019,11 +3023,11 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>查看恶意样本的函数情况：</p>
-<p><img src="/images/posts/talk_about_golang/example3_mal_gdb.png"></p>
+<p><img src="/images/posts/talk_about_golang/example3_mal_gdb.png" alt="" /></p>
 <p>使用<code>b main.main</code> 设置断点，并使用<code>r</code>运行该程序：</p>
-<p><img src="/images/posts/talk_about_golang/example3_mal_gdb_info_functions.png"></p>
+<p><img src="/images/posts/talk_about_golang/example3_mal_gdb_info_functions.png" alt="" /></p>
 <p>使用<code>b main.runFromMemory</code> 对r2查到的函数<code>main.runFromMemory</code> 进行下断点，并设置调试子进程<code>set follow-fork-mode child</code>:</p>
-<p><img src="/images/posts/talk_about_golang/example3_mal_unFromMemory.png"></p>
+<p><img src="/images/posts/talk_about_golang/example3_mal_unFromMemory.png" alt="" /></p>
 <blockquote>
 <p>用<code>set follow-fork-mode child</code>的目的是告诉 gdb 在目标应用调用fork之后接着调试子进程而不是父进程，因为在 Linux 中fork系统调用成功会返回两次，一次在父进程，一次在子进程。</p>
 </blockquote>
@@ -3036,9 +3040,9 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">b syscall.write 
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/example3_mal_b_write.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/example3_mal_b_write.png" alt="" /></p>
 <p>键入<code>c</code> 十余次之后，执行到<code>main.runFromMemory</code> 函数，可以发现恶意程序将要把挖矿程序写入到内存中：</p>
-<p><img src="/images/posts/talk_about_golang/example3_mal_write_miner.png"></p>
+<p><img src="/images/posts/talk_about_golang/example3_mal_write_miner.png" alt="" /></p>
 <p>此时使用<code>p p</code> 打印值和内存地址，然后根据文件在内存中的地址和文件长度进行dump，把内存中的文件dump出来：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3050,9 +3054,9 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl">dump binary memory &lt;path&gt; &lt;array&gt; <span class="o">(</span>array+len<span class="o">)</span> 
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/example3_mal_dump_miner.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/example3_mal_dump_miner.png" alt="" /></p>
 <p>导出的elf文件SHA1值为<code>6feda48d24a9a6c4d00d24fdbac41def7a237caa</code>，威胁情报已将其标记为矿工：</p>
-<p><img src="/images/posts/talk_about_golang/example3_mal_threat_info.png"></p>
+<p><img src="/images/posts/talk_about_golang/example3_mal_threat_info.png" alt="" /></p>
 <h2 id="汇编">汇编</h2>
 <p>GO汇编语言不是一门独立的语言，Go编译器输出的汇编代码不对应某种真实的硬件架构，Go汇编器会使用这种伪汇编代码为目标硬件生成具体的机器指令。</p>
 <p>Go的汇编是基于Plan9汇编逐渐发展演化，而Plan9汇编是不同于 <code>X86</code> 和 <code>AT&amp;T</code>，它是源自贝尔实验室的分布式操作系统Plan9（Plan9汇编可参阅 <a href="https://9p.io/sys/doc/asm.html">A Manual for the Plan 9 assembler</a>）。Go汇编代码其中一些特点：</p>
@@ -3155,7 +3159,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </li>
 <li>在栈空间不足时，调用<code>runtime.morestack_noctxt</code>函数扩展栈，并通过JMP指令重新执行main函数。</li>
 </ul>
-<p><img alt="go tool compile打印汇编" src="/images/posts/talk_about_golang/assemble_go_tool_compile.png"></p>
+<p><img src="/images/posts/talk_about_golang/assemble_go_tool_compile.png" alt="go tool compile打印汇编" /></p>
 <p>而<code>go tool objdump</code>命令将目标文件或二进制文件反编译出汇编，常用的命令参数：</p>
 <p><code>-S</code>：打印汇编代码<br />
 <code>-s</code>：根据指定的正则，打印相关的汇编代码</p>
@@ -3172,7 +3176,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用objdump打印目标定函数的汇编代码：</p>
-<p><img alt="go tool objdump指定函数打印汇编" src="/images/posts/talk_about_golang/go_tool_objdump_regexp.png"></p>
+<p><img src="/images/posts/talk_about_golang/go_tool_objdump_regexp.png" alt="go tool objdump指定函数打印汇编" /></p>
 <h3 id="优化">优化</h3>
 <p>为保证程序执行的高效性和安全性，Go编译器默认会做内联优化、删除无效代码等操作，可以在不引入额外的代码复杂性的情况下，显著提高程序的性能，并在某些情况下产生非常明显的性能改进。但在分析场景中，常所需要的是未做优化编译生成的二进制，否则反编译二进制程序出的汇编代码会有差异。</p>
 <div class="highlight"><div class="chroma">
@@ -3196,14 +3200,14 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>下图就是一个编译优化的对比图，很清楚可以看到优化后的汇编代码简洁很多：</p>
-<p><img alt="编译优化与否的汇编对比" src="/images/posts/talk_about_golang/assemble_empty_no_optimize.png"></p>
+<p><img src="/images/posts/talk_about_golang/assemble_empty_no_optimize.png" alt="编译优化与否的汇编对比" /></p>
 <h2 id="函数">函数</h2>
 <p>在Go中，函数“一等公民”类型，可以把函数当作值来使用。 一个函数类型的字面表示形式由一个<code>func</code>关键字和一个函数签名字面表示表示形式组成，一个函数签名由一个输入参数类型列表和一个输出结果类型列表组成。</p>
 <h3 id="调用栈">调用栈</h3>
 <p>栈是一种数据结构，从高地址到低地址扩展，栈的作用就是保存函数局部变量、调用函数时传递参数、保存函数返回地址。栈是以先进后出的原则进行存取数据。</p>
 <p>栈帧是一种技术手段，通常是使用EBP（栈帧指针）寄存器访问栈内局部变量、参数、函数返回地址等的手段。</p>
 <p>下图是 <a href="https://speakerdeck.com/aarzilli/internal-architecture-of-delve?slide=6">internal architecture of delve</a> 文章中的一个调用栈图：</p>
-<p><img alt="C和Go二进制文件大小比对" src="/images/posts/talk_about_golang/call_stack.png"></p>
+<p><img src="/images/posts/talk_about_golang/call_stack.png" alt="C和Go二进制文件大小比对" /></p>
 <ol>
 <li>程序执行的时候，分配了栈的空间。通过调用<code>runtime.main</code>开始启动Goroutine，实线部分表示已经使用了的内存空间，虚线的表示为后续使用的内存空间</li>
 <li><code>runtime.main</code>通过将返回地址压栈来调用<code>main.main</code></li>
@@ -3248,7 +3252,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img alt="空函数汇编代码" src="/images/posts/talk_about_golang/assemble_empty_function.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/assemble_empty_function.png" alt="空函数汇编代码" /></p>
 <p>对生成的二进制程序<code>empty_no_optimize</code>进行<code>go tool objdump empty_no_optimize</code>操作，得到<code>EmptyFunc</code>和<code>main</code>函数的汇编代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3318,9 +3322,9 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用<code>go build -gcflags &quot;-N -l&quot; -o funcconst funcconst.go </code>编译二进制程序后，<code>go tool objdump -S funcconst</code>查看汇编代码：</p>
-<p><img alt="空函数汇编代码" src="/images/posts/talk_about_golang/assemble_funcconst_function.png"></p>
+<p><img src="/images/posts/talk_about_golang/assemble_funcconst_function.png" alt="空函数汇编代码" /></p>
 <p>比较有无返回值时候，生成的汇编代码差异：</p>
-<p><img alt="空函数汇编代码" src="/images/posts/talk_about_golang/assemble_funcconst_empty_diff.png"></p>
+<p><img src="/images/posts/talk_about_golang/assemble_funcconst_empty_diff.png" alt="空函数汇编代码" /></p>
 <p>左右两边的汇编代码有差异性，但是不太大，左边的<code>FuncConst()</code>函数汇编代码多了:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3360,7 +3364,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img alt="函数传参汇编代码" src="/images/posts/talk_about_golang/assemble_funadd.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/assemble_funadd.png" alt="函数传参汇编代码" /></p>
 <p>可以看出<strong>Go1.16的参数是通过栈进行传递，而不是用寄存器传递</strong>。</p>
 <h4 id="寄存器传值">寄存器传值</h4>
 <p>Go1.17版本开始使用寄存器来代替栈，用于传递函数的参数和返回值。</p>
@@ -3391,7 +3395,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img alt="空函数汇编代码" src="/images/posts/talk_about_golang/assemble_funcadd_go1.17.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/assemble_funcadd_go1.17.png" alt="空函数汇编代码" /></p>
 <p>继续使用新的样例代码,查看不同的Go版本（Go1.16和Go1.17）的汇编代码(<code>go tool compile -S -N -l add.go</code>)：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3428,7 +3432,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>下图的左边是Golang1.17版本，在调用<code>addTwo()</code>函数前，使用了寄存器<code>AX</code>和<code>BX</code>传参数值，而右边的Go1.16是使用的栈进行传参数值：</p>
-<p><img alt="Go1.16和1.17调用约定比较" src="/images/posts/talk_about_golang/register-based-calling-convention_compare.png"></p>
+<p><img src="/images/posts/talk_about_golang/register-based-calling-convention_compare.png" alt="Go1.16和1.17调用约定比较" /></p>
 <blockquote>
 <p><a href="https://go.dev/blog/go1.18beta1">https://go.dev/blog/go1.18beta1</a> 指出Go1.17新加入了基于寄存器的调用约定，用于加速 x86-64 系统上的Go代码运行效率，Go1.18beta版本将这个特性扩展到了 AMR64 和 PPC64 上。</p>
 </blockquote>
@@ -3462,14 +3466,14 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img alt="Go1.16和1.17寄存器传参比较" src="/images/posts/talk_about_golang/assemble_add_12number_function.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/assemble_add_12number_function.png" alt="Go1.16和1.17寄存器传参比较" /></p>
 <p>可见上图中的Go1.16.10版本使用栈传参，而go1.17.3版本用了寄存器和栈传参。可见，在go1.17.3中，前9个参数依次使用<code>AX</code>、<code>BX</code>、<code>CX</code>、<code>DI</code>、<code>SI</code>、<code>R8</code>、<code>R9</code>、<code>R10</code>、<code>R11</code>这9个通用寄存器进行传递，其他的参数按顺序放在栈上。</p>
 <h2 id="安全">安全</h2>
 <h3 id="ssti">SSTI</h3>
 <p>Go语言内置了 <code>text/template</code> 和 <code>html/template</code>两个模板库，专门用于处理html模板。<code>html/template</code> 在 <code>text/template</code> 模板库的基础上增加了自动转义机制，对html输出的安全处理，从而防止恶意代码注入。</p>
 <p>基本使用</p>
 <p>创建两个文件，一个为hello.html，一个为main.go，使用模板包处理渲染HTML。html文件中使用了template的语法<code>{{.}}</code>，然后通过go的template引擎进行解析，替换成对应的内容——<code>Hello World</code>，所以浏览器渲染的是<code>Hello World</code> ：</p>
-<p><img src="/images/posts/talk_about_golang/go_ssti_helloworld.png"></p>
+<p><img src="/images/posts/talk_about_golang/go_ssti_helloworld.png" alt="" /></p>
 <p>在template中，点<code>.</code>代表当前作用域的当前对象。 上述中，hello.html中的 <code>{{.}}</code>点是顶级作用域范围内的，代表<code>Execute(w,&quot;Hello World&quot;)</code>的第二个参数<code>Hello World</code>，即它代表这个字符串对象。</p>
 <p>如果修改代码，加入一个<code>User</code>结构体，执行<code>t.Execute(w, &amp;u1)</code>：就会解析到<code>u1</code> 对象，即打印u1对象的所有值<code> {0 test@test.com test123}</code>。如果html中的代码<code>  {{ . }}</code>修改为<code>{{.Password}}</code> 就会等同于执行了<code>t.Execute(w, &amp;u1.Password)</code> ，浏览器上的HTML就会解析、渲染Password的值——<code>test123</code> 。如果如果html中的代码<code>{{ . }}</code>修改为<code>{{.Pa}}</code>：，那么就没有正确的值可以访问，浏览器上对应的地方就会出现空白，没有任何相关输出。</p>
 <div class="highlight"><div class="chroma">
@@ -3534,7 +3538,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/go_ssti_donet_Pa.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/go_ssti_donet_Pa.png" alt="" /></p>
 <p>用Golang的模版编写有SSTI缺陷的代码，不仅仅可以做到获取敏感信息，还可以实现RCE。下面代码就存在SSTI的缺陷：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3603,7 +3607,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>根据代码<code>{{.}}</code>、 <code>{{.Label &quot;GoGoGolang&quot;}}</code> 、 <code>{{.Secret &quot;whoami&quot;}}</code> 、<code>{{&quot;whoami&quot; | .Secret}}</code> 会调用<code>Person</code>结构体的方法，从而执行定义的方法：</p>
-<p><img src="/images/posts/talk_about_golang/go_ssti_1.png"></p>
+<p><img src="/images/posts/talk_about_golang/go_ssti_1.png" alt="" /></p>
 <p>一般地，如果调用对象的方法本身不存在命令执行，那很大可能不会造成RCE，除非有其它的一些特殊函数执行。而上述POC代码中触发恶意行为的关键就是<code>Secret()</code>方法，本质上就是方法中调用了命令执行的代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3619,7 +3623,7 @@ SSE (Streaming SIMD Extensions)，该扩展加入了新的 xmm 寄存器集合�
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/posts/talk_about_golang/go_ssti_2.png"></p>
+</div><p><img src="/images/posts/talk_about_golang/go_ssti_2.png" alt="" /></p>
 <h2 id="其它">其它</h2>
 <h3 id="503-service-unavailable">503 Service Unavailable</h3>
 <p>在写<a href="https://github.com/zz1gg/secdemo/tree/main/proxy/reGeorgGo">reGeorgGo</a>的时候，使用vulhub上的一个靶机作为测试站点，遇到一个问题——Go编写的客户端程序发出的正常数据包请求测试站点，会返回&quot;503 Service Unavailable&quot;。且经过Python、Curl等多方向测试，均可访问，但唯独Go编写的客户端程序无法返回&quot;200&quot;的HTTP状态码。</p>
@@ -5049,65 +5053,69 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="toc toc__outer " data-dir="ltr" data-folding="true" data-ani="true">
           <nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
-    <li><a href="#golang文件">Golang文件</a>
+    <li>
       <ul>
-        <li><a href="#文件大小">文件大小</a></li>
-        <li><a href="#元数据">元数据</a>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#golang文件">Golang文件</a>
           <ul>
-            <li><a href="#build-id">Build ID</a></li>
-            <li><a href="#版本号">版本号</a></li>
-            <li><a href="#路径信息">路径信息</a></li>
+            <li><a href="#文件大小">文件大小</a></li>
+            <li><a href="#元数据">元数据</a>
+              <ul>
+                <li><a href="#build-id">Build ID</a></li>
+                <li><a href="#版本号">版本号</a></li>
+                <li><a href="#路径信息">路径信息</a></li>
+              </ul>
+            </li>
+            <li><a href="#pcheader结构体">pcHeader结构体</a>
+              <ul>
+                <li><a href="#幻数">幻数</a></li>
+              </ul>
+            </li>
+            <li><a href="#样例分析1分析poc程序">样例分析1——分析POC程序</a>
+              <ul>
+                <li><a href="#实验准备">实验准备</a></li>
+                <li><a href="#定位函数">定位函数</a></li>
+                <li><a href="#goroot">GOROOT</a></li>
+                <li><a href="#垃圾回收">垃圾回收</a></li>
+                <li><a href="#主函数">主函数</a></li>
+                <li><a href="#conference函数">Conference函数</a></li>
+                <li><a href="#download_exec函数">download_exec函数</a></li>
+              </ul>
+            </li>
+            <li><a href="#样例分析2静态分析trojan">样例分析2——静态分析Trojan</a></li>
+            <li><a href="#样例分析3动态分析miner">样例分析3——动态分析Miner</a></li>
           </ul>
         </li>
-        <li><a href="#pcheader结构体">pcHeader结构体</a>
+        <li><a href="#汇编">汇编</a>
           <ul>
-            <li><a href="#幻数">幻数</a></li>
+            <li><a href="#打印汇编代码">打印汇编代码</a></li>
+            <li><a href="#优化">优化</a></li>
           </ul>
         </li>
-        <li><a href="#样例分析1分析poc程序">样例分析1——分析POC程序</a>
+        <li><a href="#函数">函数</a>
           <ul>
-            <li><a href="#实验准备">实验准备</a></li>
-            <li><a href="#定位函数">定位函数</a></li>
-            <li><a href="#goroot">GOROOT</a></li>
-            <li><a href="#垃圾回收">垃圾回收</a></li>
-            <li><a href="#主函数">主函数</a></li>
-            <li><a href="#conference函数">Conference函数</a></li>
-            <li><a href="#download_exec函数">download_exec函数</a></li>
+            <li><a href="#调用栈">调用栈</a></li>
+            <li><a href="#调用约定">调用约定</a>
+              <ul>
+                <li><a href="#参数和返回值">参数和返回值</a></li>
+                <li><a href="#寄存器传值">寄存器传值</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#样例分析2静态分析trojan">样例分析2——静态分析Trojan</a></li>
-        <li><a href="#样例分析3动态分析miner">样例分析3——动态分析Miner</a></li>
-      </ul>
-    </li>
-    <li><a href="#汇编">汇编</a>
-      <ul>
-        <li><a href="#打印汇编代码">打印汇编代码</a></li>
-        <li><a href="#优化">优化</a></li>
-      </ul>
-    </li>
-    <li><a href="#函数">函数</a>
-      <ul>
-        <li><a href="#调用栈">调用栈</a></li>
-        <li><a href="#调用约定">调用约定</a>
+        <li><a href="#安全">安全</a>
           <ul>
-            <li><a href="#参数和返回值">参数和返回值</a></li>
-            <li><a href="#寄存器传值">寄存器传值</a></li>
+            <li><a href="#ssti">SSTI</a></li>
           </ul>
         </li>
+        <li><a href="#其它">其它</a>
+          <ul>
+            <li><a href="#503-service-unavailable">503 Service Unavailable</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
-    <li><a href="#安全">安全</a>
-      <ul>
-        <li><a href="#ssti">SSTI</a></li>
-      </ul>
-    </li>
-    <li><a href="#其它">其它</a>
-      <ul>
-        <li><a href="#503-service-unavailable">503 Service Unavailable</a></li>
-      </ul>
-    </li>
-    <li><a href="#references">References</a></li>
   </ul>
 </nav>
         </div>

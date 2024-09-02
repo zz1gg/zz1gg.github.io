@@ -58,22 +58,19 @@
     <loc>https://zz1gg.github.io/tags/ctf/</loc>
     <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
-    <loc>https://zz1gg.github.io/tags/index/</loc>
-    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
-  </url><url>
     <loc>https://zz1gg.github.io/tags/injection/</loc>
     <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/tags/llm/</loc>
     <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
+    <loc>https://zz1gg.github.io/posts/llm-prompt-injection/</loc>
+    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
+  </url><url>
     <loc>https://zz1gg.github.io/posts/</loc>
     <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/tags/prompt/</loc>
-    <lastmod>2024-07-13T14:00:06+09:00</lastmod>
-  </url><url>
-    <loc>https://zz1gg.github.io/posts/prompt-injection-game-writeup/</loc>
     <lastmod>2024-07-13T14:00:06+09:00</lastmod>
   </url><url>
     <loc>https://zz1gg.github.io/series/</loc>
@@ -194,5 +191,7 @@
   </url><url>
     <loc>https://zz1gg.github.io/archive/</loc>
     <lastmod>2019-10-19T11:44:14+09:00</lastmod>
+  </url><url>
+    <loc>https://zz1gg.github.io/tags/index/</loc>
   </url>
 </urlset>

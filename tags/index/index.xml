@@ -6,13 +6,12 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Index on zz1gg&#39;s Blog</title>
+    <title>index on zz1gg&#39;s Blog</title>
     <link>https://zz1gg.github.io/tags/index/</link>
-    <description>Recent content in Index on zz1gg&#39;s Blog</description>
+    <description>Recent content in index on zz1gg&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>©2024, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 13 Jul 2024 14:00:06 +0900</lastBuildDate>
     
         <atom:link href="https://zz1gg.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
     

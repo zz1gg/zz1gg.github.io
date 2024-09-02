@@ -651,7 +651,7 @@
 
   
     
-    var baseurl = JSON.parse("\"https://zz1gg.github.io/\"");
+    var baseurl = JSON.parse("\"https://zz1gg.github.io\"");
     
     var permalink = JSON.parse("\"https://zz1gg.github.io/posts/beep-function/\"");
     
@@ -1359,7 +1359,7 @@
     <meta property="twitter:description" content="">
   
 
-<meta name="generator" content="Hugo 0.124.1">
+<meta name="generator" content="Hugo 0.116.0">
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1407,12 +1407,12 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://zz1gg.github.io/"
+      "@id": "https://zz1gg.github.io"
     },
     "publisher": {
       "@type": "Organization",
       "name": "zz1gg's Blog",
-      "url": "https://zz1gg.github.io/"
+      "url": "https://zz1gg.github.io"
     }
   }
 </script>
@@ -1740,11 +1740,11 @@
 
   <li><a href="https://zz1gg.github.io/tags/windows/" class="single__tag" title="Windows">#Windows</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/beep/" class="single__tag" title="Beep">#Beep</a></li>
+  <li><a href="https://zz1gg.github.io/tags/beep/" class="single__tag" title="beep">#beep</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/frida/" class="single__tag" title="Frida">#Frida</a></li>
+  <li><a href="https://zz1gg.github.io/tags/frida/" class="single__tag" title="frida">#frida</a></li>
 
-  <li><a href="https://zz1gg.github.io/tags/anti-sandbox/" class="single__tag" title="Anti-Sandbox">#Anti-Sandbox</a></li>
+  <li><a href="https://zz1gg.github.io/tags/anti-sandbox/" class="single__tag" title="anti-sandbox">#anti-sandbox</a></li>
 
   <li><a href="https://zz1gg.github.io/tags/golang/" class="single__tag" title="Golang">#Golang</a></li>
 
@@ -1765,9 +1765,13 @@
   <div class="expand__content expand__content--toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#beep函数">Beep函数</a></li>
-    <li><a href="#poc与hook检测">POC与Hook检测</a></li>
-    <li><a href="#references">References</a></li>
+    <li>
+      <ul>
+        <li><a href="#beep函数">Beep函数</a></li>
+        <li><a href="#poc与hook检测">POC与Hook检测</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1795,11 +1799,11 @@
 </div>
 </div><p>上述文档描述了，Beep函数在播放音调时的行为特性——即同步执行和可警报等待机制，并强调了它在播放完声音之前不会返回控制权给调用者。</p>
 <p>而一些沙箱环境可能不会完全模拟这种硬件交互和等待机制，某些恶意软件将这种特性滥用，把beep函数用于反沙箱检测，。比如，哈希值为<code>ab5dc89a301b5296b29da8dc088b68d72d8b414767faf15bc45f4969c6e0874e</code>的<code>Beep malware</code>样本采用十余种规避技术，其中一种就利用了这种特性。（该样本的分析可见https://www.swascan.com/beep-analisi-malware/）</p>
-<p><img alt="VT_info" src="/images/posts/beep_function/beep_sample.png"></p>
+<p><img src="/images/posts/beep_function/beep_sample.png" alt="VT_info" /></p>
 <p>这是一个有趣的反沙箱和反调试技术，接下来将通过POC代码模拟Beep的规避行为，更深入了解Beep函数。</p>
 <h2 id="poc与hook检测">POC与Hook检测</h2>
 <p>设计的基本实验思路如下图：</p>
-<p><img src="/images/posts/beep_function/Beep_POC_and_Hook_Lab.png"></p>
+<p><img src="/images/posts/beep_function/Beep_POC_and_Hook_Lab.png" alt="" /></p>
 <p>先将初始的<code>Beep</code> 函数的POC代码<code>beeptest.exe</code>用无修改参数的Frida脚本<code>beep.py</code>模拟沙箱检测，按照设定的延迟时间进行正常执行，输出<code>Beep Beep Beep!</code>字符串。然后将<code>beeptest.exe</code>更改为<code>beeptest1.exe</code>，添加真实时间执行的异常校验逻辑；对应地，将Frida脚本<code>beep.py</code>进行修改为<code>beep_modified.py</code>，添加延迟时间修改的功能，模拟沙箱检测。此时，<code>beeptest1.exe</code>被Hook后告警<code>Running in a sandbox environment!</code>、不输出<code>Beep Beep Beep!</code>字符串。</p>
 <p>详细步骤和效果如下所述。</p>
 <p>编写POC代码<code>beep.go</code>，通过<code>Beep</code>实现延迟执行的效果，代码如下：</p>
@@ -1967,9 +1971,9 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Python脚本 <code>beep.py</code> 对<code>beeptest.exe</code>的频率、时长无检测，<code>beeptest.exe</code> 通过<code>Beep()</code>函数可实现延迟攻击，在蜂鸣时间到达之后输出<code>Beep Beep Beep!</code>字符串。此处模拟，沙箱在仿真时间完成后，<code>beeptest.exe</code>还在休眠未执行真实意图代码，从而绕过沙箱的检测：</p>
-<p><img src="/images/posts/beep_function/beep_no_sandbox_check.png"></p>
+<p><img src="/images/posts/beep_function/beep_no_sandbox_check.png" alt="" /></p>
 <p>为了解决这种问题，有的沙箱可以实现操纵时间和执行延迟的功能。例如，Cuckoo 沙箱具有休眠跳过功能，可以用非常短的值替换延迟，迫使恶意软件在分析超时之前开始其恶意活动。（见checkpoint的文章<a href="https://evasions.checkpoint.com/src/Evasions/techniques/timing.html#delayed-execution">Evasions: Timing</a> ）</p>
-<p><img src="/images/posts/beep_function/sandbox_anti_delay.png"></p>
+<p><img src="/images/posts/beep_function/sandbox_anti_delay.png" alt="" /></p>
 <p>在本实验中，如果改进Python脚本 <code>beep.py</code> 为<code>beep_modified.py</code>，利用frida的Hook修改目标程序的“蜂鸣时间”（即，休眠时间），实现实验中“沙箱”的升级。</p>
 <p>frida脚本<code>beep_modified.py</code>对<code>beeptest.exe</code>的频率、时长进行Hook，动态缩小频率和时长，加快执行<code>beeptest.exe</code> 的程序流：</p>
 <div class="highlight"><div class="chroma">
@@ -2067,7 +2071,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>修改频率和时间参数，将<code>beeptest.exe</code>程序原有的频率750HZ设置为2HZ、时间60ms设置为20ms，加速程序的执行，顺利打印出<code>Beep Beep Beep!</code>字符串：</p>
-<p><img src="/images/posts/beep_function/beep_sandbox_checked.png"></p>
+<p><img src="/images/posts/beep_function/beep_sandbox_checked.png" alt="" /></p>
 <p>伴随着实验“沙箱”的升级——用非常短的值替换延迟，而这种休眠跳过技术也可以被绕过。 以下的方法可见<a href="https://evasions.checkpoint.com/src/Evasions/techniques/timing.html">Evasions: Timing</a></p>
 <ul>
 <li>使用多种不同方法并行延迟</li>
@@ -2170,7 +2174,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用frida脚本模拟沙箱对Beep的检测，<code>beep.py</code>脚本不会更改<code>beeptest1.exe</code> （<code>beep1.go</code>代码编译的程序）的延迟时间，<code>beeptest1.exe</code> 正常执行，打印出<code>[+] Beep Beep Beep!</code>字符串。<code>beep_modified.py</code>更改<code>beeptest1.exe</code> 执行时间，<code>beeptest1.exe</code> 对此打印出检测到沙盒环境的<code>[-] Running in a sandbox environment!</code>字符串：</p>
-<p><img src="/images/posts/beep_function/beep_antisandbox_and_sandbox_checked.png"></p>
+<p><img src="/images/posts/beep_function/beep_antisandbox_and_sandbox_checked.png" alt="" /></p>
 <p>本文编写<code>Beep</code>函数的<a href="https://github.com/zz1gg/beep-antisandbox">POC代码和frida脚本</a>（模拟沙箱），简化地模拟基于时间延迟的沙箱规避技术，并简单地升级了彼此的攻防对抗。而这种攻防对抗在现实中仍在持续进行，从检测和防御的角度来看，如果单一地对这种延迟进行时间Hook与操纵，只会让这类攻击逃之夭夭。</p>
 <p>本文实验相关代码已上传github，见https://github.com/zz1gg/beep-antisandbox</p>
 <blockquote>
@@ -2511,8 +2515,8 @@
     
     <div class="grow"></div>
     
-      <a href="https://zz1gg.github.io/posts/prompt-injection-game-writeup/" class="pagination-single__right">      
-        <div class="pagination-single__right-title">Prompt Injection CTF Game writeup</div>
+      <a href="https://zz1gg.github.io/posts/llm-prompt-injection/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">LLM提示词注入</div>
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
         </div>
@@ -3575,9 +3579,13 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="toc toc__outer " data-dir="ltr" data-folding="true" data-ani="true">
           <nav id="TableOfContents">
   <ul>
-    <li><a href="#beep函数">Beep函数</a></li>
-    <li><a href="#poc与hook检测">POC与Hook检测</a></li>
-    <li><a href="#references">References</a></li>
+    <li>
+      <ul>
+        <li><a href="#beep函数">Beep函数</a></li>
+        <li><a href="#poc与hook检测">POC与Hook检测</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>

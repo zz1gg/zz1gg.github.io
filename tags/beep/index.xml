@@ -6,9 +6,9 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Beep on zz1gg&#39;s Blog</title>
+    <title>beep on zz1gg&#39;s Blog</title>
     <link>https://zz1gg.github.io/tags/beep/</link>
-    <description>Recent content in Beep on zz1gg&#39;s Blog</description>
+    <description>Recent content in beep on zz1gg&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>©2024, All Rights Reserved</copyright>
@@ -28,7 +28,7 @@
         <description>&lt;p&gt;编写&lt;code&gt;Beep&lt;/code&gt;函数的POC代码和frida脚本（模拟检测沙箱），模拟Beep规避沙箱的检测机制。&lt;/p&gt;</description>
         
         <dc:creator>zz1gg</dc:creator>
-        <media:content url="https://zz1gg.github.io/images/posts/beep_function/beep_function_win32.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://zz1gg.github.ioimages/posts/beep_function/beep_function_win32.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

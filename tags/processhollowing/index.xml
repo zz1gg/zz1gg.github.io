@@ -28,7 +28,7 @@
         <description>&lt;p&gt;关于目标进程调试与分析、Shellcode注入到目标进程的 Process Hollowing的实现思路，以及Process Hollowing（Shellcode）攻击延展的攻击检测防御思路。&lt;/p&gt;</description>
         
         <dc:creator>zz1gg</dc:creator>
-        <media:content url="https://zz1gg.github.io/images/posts/Process_Hollowing/processhollowing_shellcode/Process_Injection.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://zz1gg.github.ioimages/posts/Process_Hollowing/processhollowing_shellcode/Process_Injection.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

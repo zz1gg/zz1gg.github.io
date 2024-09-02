@@ -1,0 +1,20 @@
+# macOS系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 图片缩略图文件
+._*
+
+# 文件权限元数据
+.Spotlight-V100
+.Trashes
+__MACOSX
+
+# 游览器自动生成的文件
+.DS_Store
+*.swp
+
+# 编辑器自动生成的文件
+.vscode/
+.idea/

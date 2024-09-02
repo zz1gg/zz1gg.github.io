@@ -19,16 +19,16 @@
 
       
       <item>
-        <title>Prompt Injection CTF Game writeup</title>
-        <link>https://zz1gg.github.io/posts/prompt-injection-game-writeup/</link>
+        <title>LLM提示词注入</title>
+        <link>https://zz1gg.github.io/posts/llm-prompt-injection/</link>
         <pubDate>Sat, 13 Jul 2024 14:00:06 +0900</pubDate>
         
         <atom:modified>Sat, 13 Jul 2024 14:00:06 +0900</atom:modified>
-        <guid>https://zz1gg.github.io/posts/prompt-injection-game-writeup/</guid>
-        <description>&lt;p&gt;Some AI Prompt Injection CTF Game writeup, like Gandalf, Immersive Labs, doublespeak&amp;hellip;&lt;/p&gt;</description>
+        <guid>https://zz1gg.github.io/posts/llm-prompt-injection/</guid>
+        <description>&lt;p&gt;大模型的强大能力使其在生成内容、提供建议等方面展现出巨大的潜力，但同时也引发了诸多安全挑战，如提示词注入(Prompt Injection)、敏感信息泄露。本文主要涉及LLM攻防的一些内容,如 AI Prompt Injection ， CTF/Game writeup(Gandalf, Immersive Labs, doublespeak)&amp;hellip;&lt;/p&gt;</description>
         
         <dc:creator>zz1gg</dc:creator>
-        <media:content url="https://zz1gg.github.io/images/posts/AI/prompt-injection-game-writeup/10.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://zz1gg.github.ioimages/posts/AI/prompt-injection-game-writeup/10.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -80,7 +80,7 @@
         <description>&lt;p&gt;关于目标进程调试与分析、Shellcode注入到目标进程的 Process Hollowing的实现思路，以及Process Hollowing（Shellcode）攻击延展的攻击检测防御思路。&lt;/p&gt;</description>
         
         <dc:creator>zz1gg</dc:creator>
-        <media:content url="https://zz1gg.github.io/images/posts/Process_Hollowing/processhollowing_shellcode/Process_Injection.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://zz1gg.github.ioimages/posts/Process_Hollowing/processhollowing_shellcode/Process_Injection.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

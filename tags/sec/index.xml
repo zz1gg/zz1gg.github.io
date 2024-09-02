@@ -6,9 +6,9 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Sec on zz1gg&#39;s Blog</title>
+    <title>sec on zz1gg&#39;s Blog</title>
     <link>https://zz1gg.github.io/tags/sec/</link>
-    <description>Recent content in Sec on zz1gg&#39;s Blog</description>
+    <description>Recent content in sec on zz1gg&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>©2024, All Rights Reserved</copyright>
@@ -28,7 +28,7 @@
         <description>&lt;p&gt;本文主要整理、记录了笔者在Golang的学习、使用过程中碰到的一些有意思的方面，内容包括但不限于编译生成、程序的元数据、代码函数、汇编、堆栈、安全。&lt;/p&gt;</description>
         
         <dc:creator>zz1gg</dc:creator>
-        <media:content url="https://zz1gg.github.io/images/posts/talk_about_golang/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://zz1gg.github.ioimages/posts/talk_about_golang/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
